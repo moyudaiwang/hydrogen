@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3940eb47-a5e3-49a9-af2f-11ead6388278" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bMDcgO4MHoTtYaIMNdJadcc2gp" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.element.hydrogen.entity.user" />
+      <recent name="com.element.hydrogen.service.user" />
+      <recent name="com.element.hydrogen.service.user.impl" />
+      <recent name="com.element.hydrogen.service.common.impl" />
+      <recent name="com.element.hydrogen.entity.common" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WorkSpace\hydrogen\src\main\java\com\element\hydrogen\mapper\user" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HydrogenApplication">
+    <configuration name="HydrogenApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.element.hydrogen.HydrogenApplication" />
+      <module name="hydrogen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.element.hydrogen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.element.hydrogen.utils.common.pwd.MD5Util" />
+      <module name="hydrogen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.element.hydrogen.utils.common.pwd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="methodTest.RandomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hydrogen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.element.hydrogen.service.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.element.hydrogen.service.user" />
+      <option name="MAIN_CLASS_NAME" value="com.element.hydrogen.service.user.methodTest" />
+      <option name="METHOD_NAME" value="RandomTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="methodTest.methodTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hydrogen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.element.hydrogen.service.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.element.hydrogen.service.user" />
+      <option name="MAIN_CLASS_NAME" value="com.element.hydrogen.service.user.methodTest" />
+      <option name="METHOD_NAME" value="methodTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomUtil.userIdRandom" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="hydrogen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.element.hydrogen.utils.common.math.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.element.hydrogen.utils.common.math" />
+      <option name="MAIN_CLASS_NAME" value="com.element.hydrogen.utils.common.math.RandomUtil" />
+      <option name="METHOD_NAME" value="userIdRandom" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HydrogenApplication" />
+        <item itemvalue="Application.MD5Util" />
+        <item itemvalue="JUnit.methodTest.RandomTest" />
+        <item itemvalue="TestNG.RandomUtil.userIdRandom" />
+        <item itemvalue="JUnit.methodTest.methodTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3940eb47-a5e3-49a9-af2f-11ead6388278" name="Default Changelist" comment="" />
+      <created>1588433149338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588433149338</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="493" y="47" key="#Custom_Plugin_Repositories" timestamp="1597855193111">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="493" y="47" key="#Custom_Plugin_Repositories/0.0.1536.824@0.0.1536.824" timestamp="1597855193111" />
+    <state x="311" y="87" key="#Getter_Template" timestamp="1596213533595">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="311" y="87" key="#Getter_Template/0.0.1536.824@0.0.1536.824" timestamp="1596213533595" />
+    <state x="361" y="74" key="#Project_Structure" timestamp="1596212631986">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="74" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1596212631986" />
+    <state x="526" y="284" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1597769747024">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="526" y="284" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824@0.0.1536.824" timestamp="1597769747024" />
+    <state x="524" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1598719565152">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="524" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598719565152" />
+    <state x="399" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1603808388485">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="399" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1603808388485" />
+    <state x="534" y="245" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1596220264970">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="534" y="245" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1536.824@0.0.1536.824" timestamp="1596220264970" />
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598725532193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598725532193" />
+    <state width="434" height="466" key="DebuggerActiveHint" timestamp="1599389145963">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="434" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1599389145963" />
+    <state x="706" y="101" key="FileChooserDialogImpl" timestamp="1603810046525">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="706" y="101" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603810046525" />
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom" timestamp="1603808909690">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603808909690" />
+    <state width="1493" height="163" key="GridCell.Tab.0.center" timestamp="1603808909690">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="163" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603808909690" />
+    <state width="1493" height="163" key="GridCell.Tab.0.left" timestamp="1603808909689">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="163" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603808909689" />
+    <state width="1493" height="163" key="GridCell.Tab.0.right" timestamp="1603808909690">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="163" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603808909690" />
+    <state width="1493" height="289" key="GridCell.Tab.1.bottom" timestamp="1603807919232">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="289" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603807919232" />
+    <state width="1493" height="289" key="GridCell.Tab.1.center" timestamp="1603807919232">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="289" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1603807919232" />
+    <state width="1493" height="289" key="GridCell.Tab.1.left" timestamp="1603807919232">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="289" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1603807919232" />
+    <state width="1493" height="289" key="GridCell.Tab.1.right" timestamp="1603807919232">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="289" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1603807919232" />
+    <state x="402" y="31" key="SettingsEditor" timestamp="1603809991202">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="402" y="31" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603809991202" />
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1597855776699">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1597855776699" />
+    <state x="338" y="148" width="859" height="605" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603807676002">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="338" y="148" width="859" height="605" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1603807676002" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1598370082163">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1598370082163" />
+    <state x="431" y="145" key="search.everywhere.popup" timestamp="1602432077876">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1602432077876" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/element/hydrogen/service/user/impl/UserInfoServiceImpl.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/element/hydrogen/controller/web/user/UserInfoController.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/element/hydrogen/controller/web/user/UserInfoController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

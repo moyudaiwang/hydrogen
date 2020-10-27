@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.element.hydrogen.mapper.user.UserInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.element.hydrogen.entity.user.UserInfoEntity" >
+    <id column="DON_USER_INFO_ID" property="donUserInfoId" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="NICKNAME" property="nickname" jdbcType="VARCHAR" />
+    <result column="USER_FOREIGN_NAME" property="userForeignName" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
+    <result column="BIRTHDAY" property="birthday" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="AVATAR" property="avatar" jdbcType="VARCHAR" />
+    <result column="USER_STATUS" property="userStatus" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DON_USER_INFO_ID, USER_ID, USER_NAME, NICKNAME, USER_FOREIGN_NAME, SEX, BIRTHDAY, 
+    PHONE_NO, EMAIL, ADDRESS, AVATAR, USER_STATUS, REMARK, CREATE_BY, CREATE_DATE, UPDATE_BY, 
+    UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from DON_USER_INFO
+    where DON_USER_INFO_ID = #{donUserInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from DON_USER_INFO
+    where DON_USER_INFO_ID = #{donUserInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
+    insert into DON_USER_INFO (DON_USER_INFO_ID, USER_ID, USER_NAME, 
+      NICKNAME, USER_FOREIGN_NAME, SEX, 
+      BIRTHDAY, PHONE_NO, EMAIL, 
+      ADDRESS, AVATAR, USER_STATUS, 
+      REMARK, CREATE_BY, CREATE_DATE, 
+      UPDATE_BY, UPDATE_DATE)
+    values (#{donUserInfoId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{userForeignName,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=VARCHAR}, #{phoneNo,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{userStatus,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
+    insert into DON_USER_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="donUserInfoId != null" >
+        DON_USER_INFO_ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="nickname != null" >
+        NICKNAME,
+      </if>
+      <if test="userForeignName != null" >
+        USER_FOREIGN_NAME,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="birthday != null" >
+        BIRTHDAY,
+      </if>
+      <if test="phoneNo != null" >
+        PHONE_NO,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="avatar != null" >
+        AVATAR,
+      </if>
+      <if test="userStatus != null" >
+        USER_STATUS,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="donUserInfoId != null" >
+        #{donUserInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="userForeignName != null" >
+        #{userForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null" >
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        #{userStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
+    update DON_USER_INFO
+    <set >
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        NICKNAME = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="userForeignName != null" >
+        USER_FOREIGN_NAME = #{userForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        BIRTHDAY = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null" >
+        PHONE_NO = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        AVATAR = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        USER_STATUS = #{userStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where DON_USER_INFO_ID = #{donUserInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
+    update DON_USER_INFO
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      NICKNAME = #{nickname,jdbcType=VARCHAR},
+      USER_FOREIGN_NAME = #{userForeignName,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=VARCHAR},
+      PHONE_NO = #{phoneNo,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      AVATAR = #{avatar,jdbcType=VARCHAR},
+      USER_STATUS = #{userStatus,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP}
+    where DON_USER_INFO_ID = #{donUserInfoId,jdbcType=VARCHAR}
+  </update>
+
+  <select id="queryUserInfoAll" resultType="com.element.hydrogen.entity.user.UserInfoEntity" parameterType="com.element.hydrogen.entity.user.UserInfoEntity">
+    select
+    <include refid="Base_Column_List" />
+    from DON_USER_INFO where USER_NAME = #{userName,jdbcType=VARCHAR}
+      or NICKNAME= #{nickname,jdbcType=VARCHAR}
+      or USER_FOREIGN_NAME = #{userForeignName,jdbcType=VARCHAR}
+  </select>
+  <select id="queryUserInfoPage" resultType="com.element.hydrogen.entity.user.UserInfoEntity" parameterType="com.element.hydrogen.entity.user.UserInfoEntity">
+    select
+    USER_ID userId,
+    USER_NAME userName,
+    NICKNAME,
+    USER_FOREIGN_NAME userForeignName,
+    SEX,
+    BIRTHDAY,
+    PHONE_NO phoneNo,
+    EMAIL,
+    ADDRESS,
+    AVATAR,
+    USER_STATUS userStatus,
+    REMARK
+    from DON_USER_INFO
+    where 1=1
+      <if test="userName != null and userName != ''">
+        and USER_NAME = #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="nickname != null and nickname != ''">
+        and NICKNAME= #{nickname,jdbcType=VARCHAR}
+      </if>
+      <if test="email != null and email != ''">
+        and EMAIL = #{email,jdbcType=VARCHAR}
+      </if>
+  </select>
+
+  <!--检测userId是否存在 -->
+  <select id="checkUserId" resultType="com.element.hydrogen.entity.user.UserInfoEntity" parameterType="com.element.hydrogen.entity.user.UserInfoEntity">
+    select count(0)from DON_USER_INFO where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+</mapper>
