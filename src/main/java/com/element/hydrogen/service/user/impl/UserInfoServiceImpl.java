@@ -2,6 +2,7 @@ package com.element.hydrogen.service.user.impl;
 
 import com.element.hydrogen.entity.common.PageRequestEntity;
 import com.element.hydrogen.entity.common.PageResultEntity;
+import com.element.hydrogen.entity.common.ResponseJson;
 import com.element.hydrogen.entity.user.UserInfoEntity;
 import com.element.hydrogen.mapper.user.UserInfoMapper;
 import com.element.hydrogen.service.user.UserInfoService;
@@ -82,6 +83,22 @@ public class UserInfoServiceImpl implements UserInfoService {
         System.out.println("user-----------"+userInfoEntityList);
         System.out.println("page------------"+pageInfo);
         return pageInfo;
+    }
+
+    @Override
+    public ResponseJson insertUserInfo(UserInfoEntity userInfoEntity) {
+        ResponseJson responseJson = new ResponseJson();
+        try{
+            responseJson =userInfoMapper.insertUserInfo(userInfoEntity);
+            responseJson.setCode("200");
+            responseJson.setStatus("true");
+            responseJson.setMessage("新增成功");
+        }catch (Exception e){
+            responseJson.setCode("500");
+            responseJson.setStatus("false");
+            responseJson.setMessage("新增失败");
+        }
+        return responseJson;
     }
 /*
 

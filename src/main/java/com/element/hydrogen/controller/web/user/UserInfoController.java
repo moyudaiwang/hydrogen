@@ -1,5 +1,6 @@
 package com.element.hydrogen.controller.web.user;
 
+import com.element.hydrogen.entity.common.ResponseJson;
 import com.element.hydrogen.entity.user.UserInfoEntity;
 import com.element.hydrogen.service.user.UserInfoService;
 import com.github.pagehelper.PageHelper;
@@ -40,7 +41,7 @@ public class UserInfoController {
      * @return
      */
     @CrossOrigin
-    @RequestMapping(value = "/queryUserInfoAll/{userName}",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryUserInfoAll",method = RequestMethod.POST)
     public List<UserInfoEntity> queryUserInfoAll(@RequestBody UserInfoEntity userInfoEntity){
         List<UserInfoEntity> userInfoEntityList =new ArrayList<>();
         userInfoEntityList =userInfoService.queryUserInfoAll(userInfoEntity);
@@ -58,8 +59,26 @@ public class UserInfoController {
         PageInfo<UserInfoEntity> pageInfo = new PageInfo<UserInfoEntity>();
         System.out.println(userInfoEntity.getUserName());
         PageHelper.startPage(userInfoEntity.getPageNum(), userInfoEntity.getPageSize());
-
         pageInfo =userInfoService.queryUserInfoPage(userInfoEntity);
         return pageInfo;
+    }
+
+    /**
+     * 新增用户信息
+     * @param userInfoEntity
+     * @return
+     */
+    @CrossOrigin
+    @RequestMapping(value = "/insertUserInfo",method = RequestMethod.POST)
+    public ResponseJson insertUserInfo(@RequestBody UserInfoEntity userInfoEntity){
+        ResponseJson responseJson = new ResponseJson();
+        try{
+            responseJson =userInfoService.insertUserInfo(userInfoEntity);
+        }catch (Exception e){
+            responseJson.setCode("500");
+            responseJson.setStatus("false");
+            responseJson.setMessage("新增失败");
+        }
+        return responseJson;
     }
 }

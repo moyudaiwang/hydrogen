@@ -1,6 +1,7 @@
 package com.element.hydrogen.service.user;
 
 import com.element.hydrogen.entity.common.PageResultEntity;
+import com.element.hydrogen.entity.common.ResponseJson;
 import com.element.hydrogen.entity.user.UserInfoEntity;
 import com.github.pagehelper.PageInfo;
 import org.springframework.data.domain.PageRequest;
@@ -41,4 +42,5 @@ public interface UserInfoService {
      */
     PageInfo<UserInfoEntity> queryUserInfoPage(UserInfoEntity userInfoEntity);
 
+    ResponseJson insertUserInfo(UserInfoEntity userInfoEntity);
 }

@@ -1,5 +1,6 @@
 package com.element.hydrogen.mapper.user;
 
+import com.element.hydrogen.entity.common.ResponseJson;
 import com.element.hydrogen.entity.user.UserInfoEntity;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -14,7 +15,7 @@ public interface UserInfoMapper {
 
     int insert(UserInfoEntity record);
 
-    int insertSelective(UserInfoEntity record);
+    //int insertSelective(UserInfoEntity record);
 
     UserInfoEntity selectByPrimaryKey(String donUserInfoId);
 
@@ -28,4 +29,6 @@ public interface UserInfoMapper {
 
     //检测userId是否存在
     int checkUserId(UserInfoEntity userInfoEntity);
+
+    ResponseJson insertUserInfo(UserInfoEntity userInfoEntity);
 }
