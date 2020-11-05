@@ -31,9 +31,9 @@
     from DON_USER_INFO
     where DON_USER_INFO_ID = #{donUserInfoId,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+  <delete id="deleteUserInfo" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
     delete from DON_USER_INFO
-    where DON_USER_INFO_ID = #{donUserInfoId,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
     insert into DON_USER_INFO (DON_USER_INFO_ID, USER_ID, USER_NAME, 
@@ -91,18 +91,14 @@
       <if test="remark != null" >
         REMARK,
       </if>
-      <if test="createBy != null" >
+      <if test="operator != null" >
         CREATE_BY,
       </if>
-      <if test="createDate != null" >
         CREATE_DATE,
-      </if>
-      <if test="updateBy != null" >
+      <if test="operator != null" >
         UPDATE_BY,
       </if>
-      <if test="updateDate != null" >
         UPDATE_DATE,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="donUserInfoId != null" >
@@ -144,18 +140,14 @@
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="createBy != null" >
-        #{createBy,jdbcType=VARCHAR},
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
       </if>
-      <if test="createDate != null" >
-        #{createDate,jdbcType=TIMESTAMP},
+        sysdate,
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
       </if>
-      <if test="updateBy != null" >
-        #{updateBy,jdbcType=VARCHAR},
-      </if>
-      <if test="updateDate != null" >
-        #{updateDate,jdbcType=TIMESTAMP},
-      </if>
+        sysdate,
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
@@ -212,9 +204,8 @@
     </set>
     where DON_USER_INFO_ID = #{donUserInfoId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
-    update DON_USER_INFO
-    set USER_ID = #{userId,jdbcType=VARCHAR},
+  <update id="updateUserInfo" parameterType="com.element.hydrogen.entity.user.UserInfoEntity" >
+    update DON_USER_INFO set
       USER_NAME = #{userName,jdbcType=VARCHAR},
       NICKNAME = #{nickname,jdbcType=VARCHAR},
       USER_FOREIGN_NAME = #{userForeignName,jdbcType=VARCHAR},
@@ -226,11 +217,9 @@
       AVATAR = #{avatar,jdbcType=VARCHAR},
       USER_STATUS = #{userStatus,jdbcType=VARCHAR},
       REMARK = #{remark,jdbcType=VARCHAR},
-      CREATE_BY = #{createBy,jdbcType=VARCHAR},
-      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
-      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
-      UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP}
-    where DON_USER_INFO_ID = #{donUserInfoId,jdbcType=VARCHAR}
+      UPDATE_BY = #{operator,jdbcType=VARCHAR},
+      UPDATE_DATE = sysdate
+    where USER_ID = #{userId,jdbcType=VARCHAR}
   </update>
 
   <select id="queryUserInfoAll" resultType="com.element.hydrogen.entity.user.UserInfoEntity" parameterType="com.element.hydrogen.entity.user.UserInfoEntity">

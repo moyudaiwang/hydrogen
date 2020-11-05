@@ -43,4 +43,8 @@ public interface UserInfoService {
     PageInfo<UserInfoEntity> queryUserInfoPage(UserInfoEntity userInfoEntity);
 
     ResponseJson insertUserInfo(UserInfoEntity userInfoEntity);
+
+    ResponseJson updateUserInfo(UserInfoEntity userInfoEntity);
+
+    ResponseJson deleteUserInfo(UserInfoEntity userInfoEntity);
 }

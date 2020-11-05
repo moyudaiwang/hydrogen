@@ -89,7 +89,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     public ResponseJson insertUserInfo(UserInfoEntity userInfoEntity) {
         ResponseJson responseJson = new ResponseJson();
         try{
-            responseJson =userInfoMapper.insertUserInfo(userInfoEntity);
+            userInfoMapper.insertUserInfo(userInfoEntity);
             responseJson.setCode("200");
             responseJson.setStatus("true");
             responseJson.setMessage("新增成功");
@@ -97,6 +97,38 @@ public class UserInfoServiceImpl implements UserInfoService {
             responseJson.setCode("500");
             responseJson.setStatus("false");
             responseJson.setMessage("新增失败");
+        }
+        return responseJson;
+    }
+
+    @Override
+    public ResponseJson updateUserInfo(UserInfoEntity userInfoEntity) {
+        ResponseJson responseJson = new ResponseJson();
+        try{
+            userInfoMapper.updateUserInfo(userInfoEntity);
+            responseJson.setCode("200");
+            responseJson.setStatus("true");
+            responseJson.setMessage("修改成功");
+        }catch (Exception e){
+            responseJson.setCode("500");
+            responseJson.setStatus("false");
+            responseJson.setMessage("修改失败");
+        }
+        return responseJson;
+    }
+
+    @Override
+    public ResponseJson deleteUserInfo(UserInfoEntity userInfoEntity) {
+        ResponseJson responseJson = new ResponseJson();
+        try{
+            userInfoMapper.deleteUserInfo(userInfoEntity);
+            responseJson.setCode("200");
+            responseJson.setStatus("true");
+            responseJson.setMessage("删除成功");
+        }catch (Exception e){
+            responseJson.setCode("500");
+            responseJson.setStatus("false");
+            responseJson.setMessage("删除失败");
         }
         return responseJson;
     }

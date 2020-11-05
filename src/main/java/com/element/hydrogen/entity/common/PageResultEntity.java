@@ -30,6 +30,14 @@ public class PageResultEntity {
      * 数据模型
      */
     private List<?> content;
+    /**
+     * 操作人
+     */
+    private String operator;
+    /**
+     * 操作时间
+     */
+    private String operatorDate;
 
     public int getPageNum() {
         return pageNum;
@@ -60,5 +68,17 @@ public class PageResultEntity {
     }
     public void setContent(List<?> content) {
         this.content = content;
+    }
+    public String getOperator() {
+        return operator;
+    }
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
+    public String getOperatorDate() {
+        return operatorDate;
+    }
+    public void setOperatorDate(String operatorDate) {
+        this.operatorDate = operatorDate;
     }
 }

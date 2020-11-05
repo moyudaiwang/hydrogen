@@ -1,6 +1,5 @@
 package com.element.hydrogen.mapper.user;
 
-import com.element.hydrogen.entity.common.ResponseJson;
 import com.element.hydrogen.entity.user.UserInfoEntity;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -11,7 +10,7 @@ import java.util.List;
  */
 @Mapper
 public interface UserInfoMapper {
-    int deleteByPrimaryKey(String donUserInfoId);
+    //int deleteByPrimaryKey(String donUserInfoId);
 
     int insert(UserInfoEntity record);
 
@@ -21,7 +20,7 @@ public interface UserInfoMapper {
 
     int updateByPrimaryKeySelective(UserInfoEntity record);
 
-    int updateByPrimaryKey(UserInfoEntity record);
+    //int updateByPrimaryKey(UserInfoEntity record);
 
     List<UserInfoEntity> queryUserInfoAll(UserInfoEntity userInfoEntity);
 
@@ -30,5 +29,9 @@ public interface UserInfoMapper {
     //检测userId是否存在
     int checkUserId(UserInfoEntity userInfoEntity);
 
-    ResponseJson insertUserInfo(UserInfoEntity userInfoEntity);
+    void insertUserInfo(UserInfoEntity userInfoEntity);
+
+    void updateUserInfo(UserInfoEntity userInfoEntity);
+
+    void deleteUserInfo(UserInfoEntity userInfoEntity);
 }

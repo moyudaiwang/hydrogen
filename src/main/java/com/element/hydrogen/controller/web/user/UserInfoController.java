@@ -72,12 +72,51 @@ public class UserInfoController {
     @RequestMapping(value = "/insertUserInfo",method = RequestMethod.POST)
     public ResponseJson insertUserInfo(@RequestBody UserInfoEntity userInfoEntity){
         ResponseJson responseJson = new ResponseJson();
+        userInfoEntity.setOperator("molecule");
         try{
             responseJson =userInfoService.insertUserInfo(userInfoEntity);
         }catch (Exception e){
             responseJson.setCode("500");
             responseJson.setStatus("false");
             responseJson.setMessage("新增失败");
+        }
+        return responseJson;
+    }
+    /**
+     * 修改用户信息
+     * @param userInfoEntity
+     * @return
+     */
+    @CrossOrigin
+    @RequestMapping(value = "/updateUserInfo",method = RequestMethod.POST)
+    public ResponseJson updateUserInfo(@RequestBody UserInfoEntity userInfoEntity){
+        ResponseJson responseJson = new ResponseJson();
+        userInfoEntity.setOperator("molecule");
+        try{
+            responseJson =userInfoService.updateUserInfo(userInfoEntity);
+        }catch (Exception e){
+            responseJson.setCode("500");
+            responseJson.setStatus("false");
+            responseJson.setMessage("修改失败");
+        }
+        return responseJson;
+    }
+    /**
+     * 删除用户信息
+     * @param userInfoEntity
+     * @return
+     */
+    @CrossOrigin
+    @RequestMapping(value = "/deleteUserInfo",method = RequestMethod.POST)
+    public ResponseJson deleteUserInfo(@RequestBody UserInfoEntity userInfoEntity){
+        ResponseJson responseJson = new ResponseJson();
+        userInfoEntity.setOperator("molecule");
+        try{
+            responseJson =userInfoService.deleteUserInfo(userInfoEntity);
+        }catch (Exception e){
+            responseJson.setCode("500");
+            responseJson.setStatus("false");
+            responseJson.setMessage("删除失败");
         }
         return responseJson;
     }
