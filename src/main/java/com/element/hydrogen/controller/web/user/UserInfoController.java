@@ -6,7 +6,6 @@ import com.element.hydrogen.service.user.UserInfoService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -71,16 +70,16 @@ public class UserInfoController {
     @CrossOrigin
     @RequestMapping(value = "/insertUserInfo",method = RequestMethod.POST)
     public ResponseJson insertUserInfo(@RequestBody UserInfoEntity userInfoEntity){
-        ResponseJson responseJson = new ResponseJson();
+        ResponseJson resJson = new ResponseJson();
         userInfoEntity.setOperator("molecule");
         try{
-            responseJson =userInfoService.insertUserInfo(userInfoEntity);
+            resJson =userInfoService.insertUserInfo(userInfoEntity);
         }catch (Exception e){
-            responseJson.setCode("500");
-            responseJson.setStatus("false");
-            responseJson.setMessage("新增失败");
+            resJson.setCode("500");
+            resJson.setStatus("false");
+            resJson.setMessage("新增失败");
         }
-        return responseJson;
+        return resJson;
     }
     /**
      * 修改用户信息
@@ -90,16 +89,16 @@ public class UserInfoController {
     @CrossOrigin
     @RequestMapping(value = "/updateUserInfo",method = RequestMethod.POST)
     public ResponseJson updateUserInfo(@RequestBody UserInfoEntity userInfoEntity){
-        ResponseJson responseJson = new ResponseJson();
+        ResponseJson resJson = new ResponseJson();
         userInfoEntity.setOperator("molecule");
         try{
-            responseJson =userInfoService.updateUserInfo(userInfoEntity);
+            resJson =userInfoService.updateUserInfo(userInfoEntity);
         }catch (Exception e){
-            responseJson.setCode("500");
-            responseJson.setStatus("false");
-            responseJson.setMessage("修改失败");
+            resJson.setCode("500");
+            resJson.setStatus("false");
+            resJson.setMessage("修改失败");
         }
-        return responseJson;
+        return resJson;
     }
     /**
      * 删除用户信息
@@ -109,15 +108,15 @@ public class UserInfoController {
     @CrossOrigin
     @RequestMapping(value = "/deleteUserInfo",method = RequestMethod.POST)
     public ResponseJson deleteUserInfo(@RequestBody UserInfoEntity userInfoEntity){
-        ResponseJson responseJson = new ResponseJson();
+        ResponseJson resJson = new ResponseJson();
         userInfoEntity.setOperator("molecule");
         try{
-            responseJson =userInfoService.deleteUserInfo(userInfoEntity);
+            resJson =userInfoService.deleteUserInfo(userInfoEntity);
         }catch (Exception e){
-            responseJson.setCode("500");
-            responseJson.setStatus("false");
-            responseJson.setMessage("删除失败");
+            resJson.setCode("500");
+            resJson.setStatus("false");
+            resJson.setMessage("删除失败");
         }
-        return responseJson;
+        return resJson;
     }
 }

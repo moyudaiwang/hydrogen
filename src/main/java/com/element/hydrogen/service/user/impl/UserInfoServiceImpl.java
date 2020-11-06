@@ -87,50 +87,50 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public ResponseJson insertUserInfo(UserInfoEntity userInfoEntity) {
-        ResponseJson responseJson = new ResponseJson();
+        ResponseJson resJson = new ResponseJson();
         try{
             userInfoMapper.insertUserInfo(userInfoEntity);
-            responseJson.setCode("200");
-            responseJson.setStatus("true");
-            responseJson.setMessage("新增成功");
+            resJson.setCode("200");
+            resJson.setStatus("true");
+            resJson.setMessage("新增成功");
         }catch (Exception e){
-            responseJson.setCode("500");
-            responseJson.setStatus("false");
-            responseJson.setMessage("新增失败");
+            resJson.setCode("500");
+            resJson.setStatus("false");
+            resJson.setMessage("新增失败");
         }
-        return responseJson;
+        return resJson;
     }
 
     @Override
     public ResponseJson updateUserInfo(UserInfoEntity userInfoEntity) {
-        ResponseJson responseJson = new ResponseJson();
+        ResponseJson resJson = new ResponseJson();
         try{
             userInfoMapper.updateUserInfo(userInfoEntity);
-            responseJson.setCode("200");
-            responseJson.setStatus("true");
-            responseJson.setMessage("修改成功");
+            resJson.setCode("200");
+            resJson.setStatus("true");
+            resJson.setMessage("修改成功");
         }catch (Exception e){
-            responseJson.setCode("500");
-            responseJson.setStatus("false");
-            responseJson.setMessage("修改失败");
+            resJson.setCode("500");
+            resJson.setStatus("false");
+            resJson.setMessage("修改失败");
         }
-        return responseJson;
+        return resJson;
     }
 
     @Override
     public ResponseJson deleteUserInfo(UserInfoEntity userInfoEntity) {
-        ResponseJson responseJson = new ResponseJson();
+        ResponseJson resJson = new ResponseJson();
         try{
             userInfoMapper.deleteUserInfo(userInfoEntity);
-            responseJson.setCode("200");
-            responseJson.setStatus("true");
-            responseJson.setMessage("删除成功");
+            resJson.setCode("200");
+            resJson.setStatus("true");
+            resJson.setMessage("删除成功");
         }catch (Exception e){
-            responseJson.setCode("500");
-            responseJson.setStatus("false");
-            responseJson.setMessage("删除失败");
+            resJson.setCode("500");
+            resJson.setStatus("false");
+            resJson.setMessage("删除失败");
         }
-        return responseJson;
+        return resJson;
     }
 /*
 
