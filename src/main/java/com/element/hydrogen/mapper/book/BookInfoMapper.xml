@@ -132,6 +132,13 @@
     delete from DON_BOOK_INFO
     where DON_BOOK_INFO_ID = #{donBookInfoId,jdbcType=VARCHAR}
   </delete>
+  <delete id="deleteBatchBookInfo" parameterType="java.lang.String" >
+    delete from DON_BOOK_INFO
+    where DON_BOOK_INFO_ID in
+    <foreach collection="array" item="donBookInfoId" open="(" separator="," close=")">
+      #{donBookInfoId,jdbcType=VARCHAR}
+    </foreach>
+  </delete>
   <insert id="insert" parameterType="com.element.hydrogen.entity.book.BookInfoEntity" >
     insert into DON_BOOK_INFO (DON_BOOK_INFO_ID, BOOK_ID, ISBN, 
       ISBN_PID, ISBN_SID, BOOK_NAME, 

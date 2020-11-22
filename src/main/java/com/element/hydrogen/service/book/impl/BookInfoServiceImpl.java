@@ -86,4 +86,21 @@ public class BookInfoServiceImpl implements BookInfoService {
         }
         return resJson;
     }
+
+    @Override
+    public ResponseJson deleteBatchBookInfo(String donBookInfoIds) {
+        ResponseJson resJson = new ResponseJson();
+        try{
+            String [] donBookInfoIdList= donBookInfoIds.split(",");
+            int deleteBatchNum = bookInfoMapper.deleteBatchBookInfo(donBookInfoIdList);
+            resJson.setCode("200");
+            resJson.setStatus("true");
+            resJson.setMessage("删除成功："+"删除"+deleteBatchNum+"条");
+        }catch (Exception e){
+            resJson.setCode("500");
+            resJson.setStatus("false");
+            resJson.setMessage("删除失败");
+        }
+        return resJson;
+    }
 }

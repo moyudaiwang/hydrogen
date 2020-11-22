@@ -2,6 +2,7 @@ package com.element.hydrogen.mapper.book;
 
 import com.element.hydrogen.entity.book.BookInfoEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -30,4 +31,6 @@ public interface BookInfoMapper {
     void updateBookInfo(BookInfoEntity bookInfoEntity);
 
     void deleteBookInfo(BookInfoEntity bookInfoEntity);
+
+    int deleteBatchBookInfo(String[] donBookInfoIdList);
 }

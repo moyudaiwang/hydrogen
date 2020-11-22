@@ -8,6 +8,9 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
 /**
  * @ClassName BookInfoController
  * @Description TODO
@@ -86,6 +89,24 @@ public class BookInfoController {
         bookInfoEntity.setOperator("molecule");
         try{
             resJson =bookInfoService.deleteBookInfo(bookInfoEntity);
+        }catch (Exception e){
+            resJson.setCode("500");
+            resJson.setStatus("false");
+            resJson.setMessage("删除失败");
+        }
+        return resJson;
+    }
+    /**
+     * 批量删除图书信息
+     * @param donBookInfoIds
+     * @return
+     */
+    @CrossOrigin
+    @RequestMapping(value = "/deleteBatchBookInfo",method = RequestMethod.POST)
+    public ResponseJson deleteBatchBookInfo(@RequestParam String donBookInfoIds) throws UnsupportedEncodingException {
+        ResponseJson resJson = new ResponseJson();
+        try{
+            resJson =bookInfoService.deleteBatchBookInfo(donBookInfoIds);
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
