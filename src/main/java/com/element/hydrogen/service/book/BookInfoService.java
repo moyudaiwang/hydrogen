@@ -25,4 +25,6 @@ public interface BookInfoService {
     ResponseJson updateBookInfo(BookInfoEntity bookInfoEntity);
 
     ResponseJson deleteBookInfo(BookInfoEntity bookInfoEntity);
+
+    ResponseJson deleteBatchBookInfo(String donBookInfoIds);
 }

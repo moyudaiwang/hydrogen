@@ -178,9 +178,7 @@
   <insert id="insertBookInfo" parameterType="com.element.hydrogen.entity.book.BookInfoEntity" >
     insert into DON_BOOK_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="donBookInfoId != null" >
         DON_BOOK_INFO_ID,
-      </if>
       <if test="bookId != null" >
         BOOK_ID,
       </if>
@@ -310,23 +308,17 @@
       <if test="remark != null" >
         REMARK,
       </if>
-      <if test="createBy != null" >
+      <if test="operator != null" >
         CREATE_BY,
       </if>
-      <if test="createDate != null" >
         CREATE_DATE,
-      </if>
-      <if test="updateBy != null" >
+      <if test="operator != null" >
         UPDATE_BY,
       </if>
-      <if test="updateDate != null" >
         UPDATE_DATE,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="donBookInfoId != null" >
-        #{donBookInfoId,jdbcType=VARCHAR},
-      </if>
+      sys_guid(),
       <if test="bookId != null" >
         #{bookId,jdbcType=VARCHAR},
       </if>
@@ -598,9 +590,7 @@
       <if test="remark != null" >
         REMARK = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="operator != null" >
-        UPDATE_BY = operator,
-      </if>
+        UPDATE_BY = #{operator,jdbcType=VARCHAR},
         UPDATE_DATE = sysdate
     </set>
     where DON_BOOK_INFO_ID = #{donBookInfoId,jdbcType=VARCHAR}
