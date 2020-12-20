@@ -16,12 +16,12 @@ public class SqlGenerator {
 
     public static void main(String[] args) {
         //实体类所在的package在磁盘上的绝对路径
-        String packageName = "D:/WorkSpace/hydrogen/src/main/java/com/element/hydrogen/entity";
+        String packageName = "D:/WorkSpace/hydrogen/src/main/java/com/element/hydrogen/entity/common";
         //生成sql的文件夹
         String filePath = "D:/BOOK/";
         //项目中实体类的路径
-        String prefix = "com.element.hydrogen.entity.";
-        String className = "UserEntity";
+        String prefix = "com.element.hydrogen.entity.common.";
+        String className = "LogEntity";
 
         StringBuffer sqls = new StringBuffer();
         //获取包下的所有类名称

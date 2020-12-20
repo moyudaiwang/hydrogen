@@ -31,50 +31,19 @@ public class ResponseJson<T>  implements Serializable {
     /**
      * 处理结果文本描述
      */
-    private String message;
+    private String msg;
 
     /**
      * 返回结果
      */
     private T result;
 
-	public String getCode() {
-		return code;
-	}
+	/**
+	 * 返回对象
+	 */
+	private Object object;
 
-	public void setCode(String code) {
-		this.code = code;
-	}
 
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public T getResult() {
-		return result;
-	}
-
-	public void setResult(T result) {
-		this.result = result;
-	}
-
-	@Override
-	public String toString() {
-		return "ResponseJson [code=" + code + ", status=" + status + ", message=" + message + ", result=" + result
-				+ "]";
-	}
 
 }
 

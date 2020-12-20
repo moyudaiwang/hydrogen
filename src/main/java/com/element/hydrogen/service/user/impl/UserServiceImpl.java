@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     public ResponseJson testJson(String userName) {
         ResponseJson responseJson =new ResponseJson();
         responseJson.setStatus("true");
-        responseJson.setMessage("okok测试成功");
+        responseJson.setMsg("okok测试成功");
         return responseJson;
     }
 

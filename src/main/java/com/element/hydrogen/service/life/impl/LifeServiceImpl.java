@@ -35,12 +35,12 @@ public class LifeServiceImpl implements LifeService {
         try {
             result = HttpRequestUtil.request(url, params, "GET");
             resJson.setCode("200");
-            resJson.setMessage("查询成功");
+            resJson.setMsg("查询成功");
             resJson.setResult(result);
         } catch (Exception e) {
             e.printStackTrace();
             resJson.setCode("500");
-            resJson.setMessage("查询失败");
+            resJson.setMsg("查询失败");
             resJson.setResult(result);
         }
         return resJson;

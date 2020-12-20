@@ -32,7 +32,7 @@ public class LifeController {
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
-            resJson.setMessage("查询失败");
+            resJson.setMsg("查询失败");
         }
         return resJson;
     }

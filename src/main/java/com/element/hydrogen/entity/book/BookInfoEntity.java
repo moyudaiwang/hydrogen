@@ -1,6 +1,7 @@
 package com.element.hydrogen.entity.book;
 
 import com.element.hydrogen.entity.common.PageResultEntity;
+import com.element.hydrogen.utils.common.excel.IsNeeded;
 
 import java.util.Date;
 /**
@@ -11,101 +12,150 @@ import java.util.Date;
  * @Version 1.0
  */
 public class BookInfoEntity extends PageResultEntity {
-    private String donBookInfoId;
 
+    @IsNeeded
     private String bookId;
 
+    @IsNeeded
     private String isbn;
 
+    @IsNeeded
     private String isbnPid;
 
+    @IsNeeded
     private String isbnSid;
 
+    @IsNeeded
     private String bookName;
 
+    @IsNeeded
     private String bookForeignName;
 
+    @IsNeeded
     private String author;
 
+    @IsNeeded
     private String authorForeignName;
 
+    @IsNeeded
     private String authorCountry;
 
+    @IsNeeded
     private String translator;
 
+    @IsNeeded
     private String translatorForeignName;
 
+    @IsNeeded
     private String editorCharge;
 
+    @IsNeeded
     private String coverDesign;
 
+    @IsNeeded
     private String collection;
 
+    @IsNeeded
     private String press;
 
+    @IsNeeded
     private String issue;
 
+    @IsNeeded
     private String printHouse;
 
+    @IsNeeded
     private String price;
 
+    @IsNeeded
     private String currencyType;
 
+    @IsNeeded
     private String editionFirstDate;
 
+    @IsNeeded
     private String impressionFirstDate;
 
+    @IsNeeded
     private String editionDate;
 
+    @IsNeeded
     private String impressionDate;
 
+    @IsNeeded
     private String edition;
 
+    @IsNeeded
     private String impression;
 
+    @IsNeeded
     private String sheetsNum;
 
+    @IsNeeded
     private String bookFormat;
 
+    @IsNeeded
     private String wordNum;
 
+    @IsNeeded
     private String bookPage;
 
+    @IsNeeded
     private String printNumStart;
 
+    @IsNeeded
     private String printNumEnd;
 
+    @IsNeeded
     private String printNum;
 
+    @IsNeeded
     private String language;
 
+    @IsNeeded
     private String clc;
 
+    @IsNeeded
     private String flc;
 
+    @IsNeeded
     private String bindType;
 
+    @IsNeeded
     private String lwh;
 
+    @IsNeeded
     private String volume;
 
+    @IsNeeded
     private String weight;
 
+    @IsNeeded
     private String signFlag;
 
+    @IsNeeded
     private String signetFlag;
 
+    @IsNeeded
     private String bookAvatar;
 
+    @IsNeeded
     private String remark;
+
 
     private String createBy;
 
+
     private Date createDate;
+
 
     private String updateBy;
 
+
     private Date updateDate;
+
+    @IsNeeded
+    private String donBookInfoId;
 
     public String getDonBookInfoId() {
         return donBookInfoId;
@@ -489,5 +539,59 @@ public class BookInfoEntity extends PageResultEntity {
 
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
+    }
+
+    @Override
+    public String toString() {
+        return "BookInfoEntity{" +
+                "bookId='" + bookId + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", isbnPid='" + isbnPid + '\'' +
+                ", isbnSid='" + isbnSid + '\'' +
+                ", bookName='" + bookName + '\'' +
+                ", bookForeignName='" + bookForeignName + '\'' +
+                ", author='" + author + '\'' +
+                ", authorForeignName='" + authorForeignName + '\'' +
+                ", authorCountry='" + authorCountry + '\'' +
+                ", translator='" + translator + '\'' +
+                ", translatorForeignName='" + translatorForeignName + '\'' +
+                ", editorCharge='" + editorCharge + '\'' +
+                ", coverDesign='" + coverDesign + '\'' +
+                ", collection='" + collection + '\'' +
+                ", press='" + press + '\'' +
+                ", issue='" + issue + '\'' +
+                ", printHouse='" + printHouse + '\'' +
+                ", price='" + price + '\'' +
+                ", currencyType='" + currencyType + '\'' +
+                ", editionFirstDate='" + editionFirstDate + '\'' +
+                ", impressionFirstDate='" + impressionFirstDate + '\'' +
+                ", editionDate='" + editionDate + '\'' +
+                ", impressionDate='" + impressionDate + '\'' +
+                ", edition='" + edition + '\'' +
+                ", impression='" + impression + '\'' +
+                ", sheetsNum='" + sheetsNum + '\'' +
+                ", bookFormat='" + bookFormat + '\'' +
+                ", wordNum='" + wordNum + '\'' +
+                ", bookPage='" + bookPage + '\'' +
+                ", printNumStart='" + printNumStart + '\'' +
+                ", printNumEnd='" + printNumEnd + '\'' +
+                ", printNum='" + printNum + '\'' +
+                ", language='" + language + '\'' +
+                ", clc='" + clc + '\'' +
+                ", flc='" + flc + '\'' +
+                ", bindType='" + bindType + '\'' +
+                ", lwh='" + lwh + '\'' +
+                ", volume='" + volume + '\'' +
+                ", weight='" + weight + '\'' +
+                ", signFlag='" + signFlag + '\'' +
+                ", signetFlag='" + signetFlag + '\'' +
+                ", bookAvatar='" + bookAvatar + '\'' +
+                ", remark='" + remark + '\'' +
+                ", createBy='" + createBy + '\'' +
+                ", createDate=" + createDate +
+                ", updateBy='" + updateBy + '\'' +
+                ", updateDate=" + updateDate +
+                ", donBookInfoId='" + donBookInfoId + '\'' +
+                '}';
     }
 }

@@ -92,11 +92,11 @@ public class UserInfoServiceImpl implements UserInfoService {
             userInfoMapper.insertUserInfo(userInfoEntity);
             resJson.setCode("200");
             resJson.setStatus("true");
-            resJson.setMessage("新增成功");
+            resJson.setMsg("新增成功");
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
-            resJson.setMessage("新增失败");
+            resJson.setMsg("新增失败");
         }
         return resJson;
     }
@@ -108,11 +108,11 @@ public class UserInfoServiceImpl implements UserInfoService {
             userInfoMapper.updateUserInfo(userInfoEntity);
             resJson.setCode("200");
             resJson.setStatus("true");
-            resJson.setMessage("修改成功");
+            resJson.setMsg("修改成功");
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
-            resJson.setMessage("修改失败");
+            resJson.setMsg("修改失败");
         }
         return resJson;
     }
@@ -124,11 +124,11 @@ public class UserInfoServiceImpl implements UserInfoService {
             userInfoMapper.deleteUserInfo(userInfoEntity);
             resJson.setCode("200");
             resJson.setStatus("true");
-            resJson.setMessage("删除成功");
+            resJson.setMsg("删除成功");
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
-            resJson.setMessage("删除失败");
+            resJson.setMsg("删除失败");
         }
         return resJson;
     }

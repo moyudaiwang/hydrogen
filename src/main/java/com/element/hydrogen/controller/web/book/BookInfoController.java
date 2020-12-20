@@ -54,7 +54,7 @@ public class BookInfoController {
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
-            resJson.setMessage("新增失败");
+            resJson.setMsg("新增失败");
         }
         return resJson;
     }
@@ -73,7 +73,7 @@ public class BookInfoController {
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
-            resJson.setMessage("修改失败");
+            resJson.setMsg("修改失败");
         }
         return resJson;
     }
@@ -92,7 +92,7 @@ public class BookInfoController {
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
-            resJson.setMessage("删除失败");
+            resJson.setMsg("删除失败");
         }
         return resJson;
     }
@@ -110,7 +110,7 @@ public class BookInfoController {
         }catch (Exception e){
             resJson.setCode("500");
             resJson.setStatus("false");
-            resJson.setMessage("删除失败");
+            resJson.setMsg("删除失败");
         }
         return resJson;
     }
