@@ -15,7 +15,7 @@ public interface ExcelService {
 
     ResponseJson imports(MultipartFile excelFile, String module);
 
-    ResponseJson analyze(MultipartFile excelFile, String module);
+    ResponseJson analyze(MultipartFile excelFile, String module) throws Exception;
 
     ResponseJson asyncImport(ResponseJson dtoJson, String id);
 }

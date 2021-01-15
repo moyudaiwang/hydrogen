@@ -27,6 +27,10 @@ public class ExcelController {
 
     /**
      * 解析+导入
+     * @param excelFile
+     * @param module
+     * @return
+     * @throws IOException
      */
     @RequestMapping(value = "/imports",method = RequestMethod.POST)
     public ResponseJson imports(@RequestParam("excelFile")MultipartFile excelFile, String module) throws IOException{
@@ -50,12 +54,28 @@ public class ExcelController {
      * @throws IOException
      */
     @RequestMapping(value = "/analyze",method = RequestMethod.POST)
-    public ResponseJson analyze(@RequestParam("excelFile")MultipartFile excelFile, String module) throws IOException{
+    public ResponseJson analyze(@RequestParam("multipartFiles")MultipartFile[] multipartFiles, String module){
         ResponseJson resJson = new ResponseJson();
+
         try{
-            resJson =excelService.analyze(excelFile,module);
-            System.out.println(resJson);
+
+            //判断file数组不能为空并且长度大于0
+            if(multipartFiles != null && multipartFiles.length > 0) {
+                //循环获取file数组中得文件
+                for (int i = 0; i < multipartFiles.length; i++) {
+                    MultipartFile file = multipartFiles[i];
+                    //保存文件
+                    if (!file.isEmpty()) {
+                        String n = file.getOriginalFilename();
+                        System.out.println("nnnnnnnn---"+n);
+                        resJson =excelService.analyze(file,module);
+                        System.out.println(resJson);
+                    }
+                }
+            }
+
         }catch (Exception e){
+            System.out.println("eeee----"+e);
             resJson.setCode("500");
             resJson.setStatus("false");
             resJson.setMsg("导入失败");
