@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.element.hydrogen.mapper.user.AccountCodeMapper" >
+  <resultMap id="BaseResultMap" type="com.element.hydrogen.entity.user.AccountCodeEntity" >
+    <id column="DON_ACCOUNT_CODE_ID" property="donAccountCodeId" jdbcType="VARCHAR" />
+    <result column="ACCOUNT_ID" property="accountId" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="ALG" property="alg" jdbcType="VARCHAR" />
+    <result column="USER_KEY" property="userKey" jdbcType="VARCHAR" />
+    <result column="PWD" property="pwd" jdbcType="VARCHAR" />
+    <result column="CAPTCHA" property="captcha" jdbcType="VARCHAR" />
+    <result column="CAPTCHA_TIME" property="captchaTime" jdbcType="TIMESTAMP" />
+    <result column="ERROR_NUM" property="errorNum" jdbcType="VARCHAR" />
+    <result column="INIT_PWD" property="initPwd" jdbcType="VARCHAR" />
+    <result column="ACCOUNT_STATUS" property="accountStatus" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DON_ACCOUNT_CODE_ID, ACCOUNT_ID, USER_ID, USER_NAME, PHONE_NO, EMAIL, ALG, USER_KEY, 
+    PWD, CAPTCHA, CAPTCHA_TIME, ERROR_NUM, INIT_PWD, ACCOUNT_STATUS, REMARK, CREATE_BY, 
+    CREATE_DATE, UPDATE_BY, UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from DON_ACCOUNT_CODE
+    where DON_ACCOUNT_CODE_ID = #{donAccountCodeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from DON_ACCOUNT_CODE
+    where DON_ACCOUNT_CODE_ID = #{donAccountCodeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.element.hydrogen.entity.user.AccountCodeEntity" >
+    insert into DON_ACCOUNT_CODE (DON_ACCOUNT_CODE_ID, ACCOUNT_ID, USER_ID, 
+      USER_NAME, PHONE_NO, EMAIL, 
+      ALG, USER_KEY, PWD, 
+      CAPTCHA, CAPTCHA_TIME, ERROR_NUM, 
+      INIT_PWD, ACCOUNT_STATUS, REMARK, 
+      CREATE_BY, CREATE_DATE, UPDATE_BY, 
+      UPDATE_DATE)
+    values (#{donAccountCodeId,jdbcType=VARCHAR}, #{accountId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, 
+      #{userName,jdbcType=VARCHAR}, #{phoneNo,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{alg,jdbcType=VARCHAR}, #{userKey,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{captcha,jdbcType=VARCHAR}, #{captchaTime,jdbcType=TIMESTAMP}, #{errorNum,jdbcType=VARCHAR}, 
+      #{initPwd,jdbcType=VARCHAR}, #{accountStatus,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.element.hydrogen.entity.user.AccountCodeEntity" >
+    insert into DON_ACCOUNT_CODE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="donAccountCodeId != null" >
+        DON_ACCOUNT_CODE_ID,
+      </if>
+      <if test="accountId != null" >
+        ACCOUNT_ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="phoneNo != null" >
+        PHONE_NO,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="alg != null" >
+        ALG,
+      </if>
+      <if test="userKey != null" >
+        USER_KEY,
+      </if>
+      <if test="pwd != null" >
+        PWD,
+      </if>
+      <if test="captcha != null" >
+        CAPTCHA,
+      </if>
+      <if test="captchaTime != null" >
+        CAPTCHA_TIME,
+      </if>
+      <if test="errorNum != null" >
+        ERROR_NUM,
+      </if>
+      <if test="initPwd != null" >
+        INIT_PWD,
+      </if>
+      <if test="accountStatus != null" >
+        ACCOUNT_STATUS,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="donAccountCodeId != null" >
+        #{donAccountCodeId,jdbcType=VARCHAR},
+      </if>
+      <if test="accountId != null" >
+        #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null" >
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="alg != null" >
+        #{alg,jdbcType=VARCHAR},
+      </if>
+      <if test="userKey != null" >
+        #{userKey,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="captcha != null" >
+        #{captcha,jdbcType=VARCHAR},
+      </if>
+      <if test="captchaTime != null" >
+        #{captchaTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="errorNum != null" >
+        #{errorNum,jdbcType=VARCHAR},
+      </if>
+      <if test="initPwd != null" >
+        #{initPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="accountStatus != null" >
+        #{accountStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.user.AccountCodeEntity" >
+    update DON_ACCOUNT_CODE
+    <set >
+      <if test="accountId != null" >
+        ACCOUNT_ID = #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null" >
+        PHONE_NO = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="alg != null" >
+        ALG = #{alg,jdbcType=VARCHAR},
+      </if>
+      <if test="userKey != null" >
+        USER_KEY = #{userKey,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        PWD = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="captcha != null" >
+        CAPTCHA = #{captcha,jdbcType=VARCHAR},
+      </if>
+      <if test="captchaTime != null" >
+        CAPTCHA_TIME = #{captchaTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="errorNum != null" >
+        ERROR_NUM = #{errorNum,jdbcType=VARCHAR},
+      </if>
+      <if test="initPwd != null" >
+        INIT_PWD = #{initPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="accountStatus != null" >
+        ACCOUNT_STATUS = #{accountStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where DON_ACCOUNT_CODE_ID = #{donAccountCodeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.user.AccountCodeEntity" >
+    update DON_ACCOUNT_CODE
+    set ACCOUNT_ID = #{accountId,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      PHONE_NO = #{phoneNo,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      ALG = #{alg,jdbcType=VARCHAR},
+      USER_KEY = #{userKey,jdbcType=VARCHAR},
+      PWD = #{pwd,jdbcType=VARCHAR},
+      CAPTCHA = #{captcha,jdbcType=VARCHAR},
+      CAPTCHA_TIME = #{captchaTime,jdbcType=TIMESTAMP},
+      ERROR_NUM = #{errorNum,jdbcType=VARCHAR},
+      INIT_PWD = #{initPwd,jdbcType=VARCHAR},
+      ACCOUNT_STATUS = #{accountStatus,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP}
+    where DON_ACCOUNT_CODE_ID = #{donAccountCodeId,jdbcType=VARCHAR}
+  </update>
+
+  <!--登录-查询验证-->
+  <select id="query" parameterType="com.element.hydrogen.entity.user.AccountCodeEntity" resultMap="BaseResultMap" >
+    select
+        <include refid="Base_Column_List" />
+    from DON_ACCOUNT_CODE
+    where 1=1
+        <if test="userId != null" >
+          AND USER_ID = #{userId,jdbcType=VARCHAR}
+        </if>
+        <if test="phoneNo != null" >
+          AND PHONE_NO = #{phoneNo,jdbcType=VARCHAR}
+        </if>
+        <if test="email != null" >
+          AND EMAIL = #{email,jdbcType=VARCHAR}
+        </if>
+  </select>
+</mapper>
