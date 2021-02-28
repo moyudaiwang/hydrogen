@@ -79,6 +79,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     public PageInfo<UserInfoEntity> queryUserInfoPage(UserInfoEntity userInfoEntity) {
         PageHelper.startPage(userInfoEntity.getPageNum(), userInfoEntity.getPageSize());
         List<UserInfoEntity> userInfoEntityList = userInfoMapper.queryUserInfoPage(userInfoEntity);
+        System.out.println("----------");
+        System.out.println(userInfoEntityList);
+        System.out.println("---------------");
         PageInfo<UserInfoEntity> pageInfo =new PageInfo<UserInfoEntity>(userInfoEntityList);
         System.out.println("user-----------"+userInfoEntityList);
         System.out.println("page------------"+pageInfo);

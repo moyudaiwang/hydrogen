@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * @ClassName HttpRequest
- * @Description TODO
+ * @Description TODO 聚合api请求测试
  * @Author yanyu
  * @Date 2020/11/6 21:51
  * @Version 1.0

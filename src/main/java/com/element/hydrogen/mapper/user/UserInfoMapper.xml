@@ -258,6 +258,6 @@
 
   <!--检测userId是否存在 -->
   <select id="checkUserId" resultType="java.lang.Integer" parameterType="com.element.hydrogen.entity.user.UserInfoEntity">
-    select count(0)from DON_USER_INFO where USER_ID = #{userId,jdbcType=VARCHAR}
+    select count(0) from DON_USER_INFO where USER_ID = #{userId,jdbcType=VARCHAR}
   </select>
 </mapper>
