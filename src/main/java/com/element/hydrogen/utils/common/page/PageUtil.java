@@ -6,7 +6,7 @@ import com.github.pagehelper.PageInfo;
 
 /**
  * @ClassName PageUtil
- * @Description TODO
+ * @Description 分页工具类
  * @Author yanyu
  * @Date 2020/8/30 2:16
  * @Version 1.0

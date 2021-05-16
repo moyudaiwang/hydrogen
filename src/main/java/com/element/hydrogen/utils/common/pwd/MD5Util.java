@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * @ClassName MD5Util
- * @Description TODO
+ * @Description 加密工具类
  * @Author yanyu
  * @Date 2020/9/15 23:49
  * @Version 1.0

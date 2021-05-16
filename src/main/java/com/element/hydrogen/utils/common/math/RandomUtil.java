@@ -3,8 +3,6 @@ package com.element.hydrogen.utils.common.math;
 import com.element.hydrogen.entity.user.UserInfoEntity;
 import com.element.hydrogen.mapper.user.UserInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.testng.annotations.Test;
-import sun.text.resources.cldr.gsw.FormatData_gsw;
 
 import java.util.Random;
 
@@ -34,6 +32,16 @@ public class RandomUtil {
        }while(seaFlag=false);
 
 
+   }
+    // 生成5位随机数
+   public String randomFive() {
+       Random r = new Random(1);
+       String randomStr = "";
+        for(int i=0 ; i<1;  i++) {
+            int ran1 = r.nextInt(100000);
+            randomStr =ran1+"";
+        }
+        return randomStr;
    }
 
 
