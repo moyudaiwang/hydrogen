@@ -22,6 +22,9 @@ public class HttpRequestUtil {
     public static final int DEF_READ_TIMEOUT = 30000;
     public static String userAgent =  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.66 Safari/537.36";
 
+    public static void main(String[] args) {
+        mobileQuery();
+    }
     public static void mobileQuery(){
         String result =null;
         String url ="http://apis.juhe.cn/mobile/get";//请求接口地址
