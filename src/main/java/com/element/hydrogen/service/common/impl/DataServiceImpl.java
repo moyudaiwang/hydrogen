@@ -59,7 +59,7 @@ public class DataServiceImpl implements DataService {
         }
         writer.close();
         responseJson.setCode("200");
-        responseJson.setMsg("导出成功");
+        responseJson.setMsg("导出成功:"+SQL_PATH);
         return responseJson;
     }
 
