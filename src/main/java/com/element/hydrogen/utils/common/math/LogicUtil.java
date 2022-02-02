@@ -1,7 +1,5 @@
 package com.element.hydrogen.utils.common.math;
 
-import com.element.hydrogen.entity.user.AccountCodeEntity;
-
 /**
  * @ClassName LogicUtil
  * @Description TODO 逻辑工具类

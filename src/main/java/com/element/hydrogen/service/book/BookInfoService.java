@@ -1,8 +1,9 @@
 package com.element.hydrogen.service.book;
 
-import com.element.hydrogen.entity.book.BookInfoEntity;
+import com.element.hydrogen.entity.book.DonBookInfoEntity;
 import com.element.hydrogen.entity.common.ResponseJson;
-import com.github.pagehelper.PageInfo;
+
+import java.util.List;
 
 /**
  * @InterfaceName BookInfoService
@@ -13,18 +14,17 @@ import com.github.pagehelper.PageInfo;
  */
 public interface BookInfoService {
 
+
     /**
      * 分页查询用户列表
-     * @param bookInfoEntity
+     * @param donBookInfoEntity
      * @return
      */
-    PageInfo<BookInfoEntity> queryBookInfoPage(BookInfoEntity bookInfoEntity);
+    ResponseJson query(DonBookInfoEntity donBookInfoEntity);
 
-    ResponseJson insertBookInfo(BookInfoEntity bookInfoEntity);
+    ResponseJson insert(DonBookInfoEntity donBookInfoEntity);
 
-    ResponseJson updateBookInfo(BookInfoEntity bookInfoEntity);
+    ResponseJson update(DonBookInfoEntity donBookInfoEntity);
 
-    ResponseJson deleteBookInfo(BookInfoEntity bookInfoEntity);
-
-    ResponseJson deleteBatchBookInfo(String donBookInfoIds);
+    ResponseJson delete(List<DonBookInfoEntity> donBookInfoEntityList);
 }

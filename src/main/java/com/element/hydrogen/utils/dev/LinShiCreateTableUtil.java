@@ -1,5 +1,7 @@
 package com.element.hydrogen.utils.dev;
 
+import com.element.hydrogen.entity.common.ResponseJson;
+import com.element.hydrogen.utils.common.excel.ExcelUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -8,10 +10,9 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,11 +27,47 @@ public class LinShiCreateTableUtil {
 
 
     private  static final  String SQL_PATH ="C:\\Users\\yanyu\\Desktop\\唐吉坷德文档库\\4_Tool\\CreateTable\\resultTableDDL.sql";  //要生成的建表SQL的路径
+    private  static final  String EXCEL_PATH ="C:\\Users\\yanyu\\Desktop\\唐吉坷德文档库\\4_Tool\\CreateTable\\TableFile.xls";  //要读取的Excel路径
 
     private  static final  int LOOP_NUM =10;  //循环几个工作表（sheet）
 
     private final static String XLS = "xls";
     private final static String XLSX = "xlsx";
+
+
+    public static void main(String[] args) throws Exception {
+        MultipartFile[] excelFiles = null;
+
+        ResponseJson responseJson = new ResponseJson();
+        PrintWriter writer = new PrintWriter(SQL_PATH) ;
+        if (excelFiles != null && excelFiles.length > 0){
+            for (int i = 0; i <excelFiles.length; i++) {
+                MultipartFile excelFile = excelFiles[i];
+                CreateTableUtil.checkFile(excelFile);
+                Workbook wb = ExcelUtil.chooseWorkbook(excelFile.getOriginalFilename(), excelFile.getInputStream());
+
+                //循环生成备份表SQL--OK
+                writer.write("-- bak Table DDL:\r\n");
+                for (int j = 0; j < LOOP_NUM; j++) {
+                    Sheet sheet = wb.getSheetAt(j);
+                   /* String bakStr = bakTale(sheet);
+                    writer.write(bakStr);*/
+                }
+                //循环生成表DDL
+                writer.write("\r\n");
+                writer.write("--create Table DDL:\r\n");
+                for (int j = 0; j < LOOP_NUM; j++) {
+                    Sheet sheet = wb.getSheetAt(j);
+                    //String createStr = createstatement(sheet);
+                    //writer.write(createStr);
+                }
+            }
+        }
+        writer.close();
+        responseJson.setCode("200");
+        responseJson.setMsg("导出成功:"+SQL_PATH);
+    }
+
 
     public static List<String[]> webCreateTable(MultipartFile file) throws IOException {
         // 检查文件

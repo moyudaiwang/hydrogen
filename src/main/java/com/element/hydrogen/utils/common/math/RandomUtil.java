@@ -1,7 +1,7 @@
 package com.element.hydrogen.utils.common.math;
 
-import com.element.hydrogen.entity.user.UserInfoEntity;
-import com.element.hydrogen.mapper.user.UserInfoMapper;
+import com.element.hydrogen.entity.user.DonUserInfoEntity;
+import com.element.hydrogen.mapper.user.DonUserInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Random;
@@ -18,16 +18,17 @@ public class RandomUtil {
     public static final int RANDOM_END = 1000000; //定义范围结束数字
 
     @Autowired
-    public UserInfoMapper userInfoMapper;
+    public DonUserInfoMapper donUserInfoMapper;
 
     // 生成用户ID
    public void userIdRandom() {
        boolean seaFlag =true;
-       UserInfoEntity userInfoEntity =new UserInfoEntity();
+       DonUserInfoEntity donUserInfoEntity =new DonUserInfoEntity();
        do{
            int randomId = (int) (Math.random()*(RANDOM_END-RANDOM_START)+RANDOM_START);
-           userInfoEntity.setUserId(randomId+"");
-           int idFlag =userInfoMapper.checkUserId(userInfoEntity);
+           donUserInfoEntity.setUserId(randomId+"");
+           int idFlag = 0;
+           //idFlag = donUserInfoMapper.checkUserId(donUserInfoEntity);
            seaFlag=idFlag==0?true:false;
        }while(seaFlag=false);
 

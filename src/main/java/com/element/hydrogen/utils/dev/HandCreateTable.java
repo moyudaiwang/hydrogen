@@ -21,10 +21,10 @@ import java.util.Date;
  */
 public class HandCreateTable {
 
-    private  static final  String EXCEL_PATH ="C:\\Users\\yanyu\\Desktop\\唐吉坷德文档库\\4_Tool\\CreateTable\\TableFile.xls";  //要读取的Excel路径
-    private  static final  String SQL_PATH ="C:\\Users\\yanyu\\Desktop\\唐吉坷德文档库\\4_Tool\\CreateTable\\result.sql";  //要生成的建表SQL的路径
+    private  static final  String EXCEL_PATH ="C:\\Users\\yanyu\\Desktop\\唐吉坷德文档库\\4_Tool\\CreateTable\\TableFile_Mysql_旧版.xls";  //要读取的Excel路径
+    private  static final  String SQL_PATH ="C:\\Users\\yanyu\\Desktop\\唐吉坷德文档库\\4_Tool\\CreateTable\\result11.sql";  //要生成的建表SQL的路径
 
-    private  static final  int LOOP_NUM =10;  //循环几个工作表（sheet）
+    private  static final  int LOOP_NUM =15;  //循环几个工作表（sheet）
 
     public static void main(String[] args) throws Exception {
         File file = new File(EXCEL_PATH);
@@ -84,7 +84,7 @@ public class HandCreateTable {
         StringBuffer partitionsb = new StringBuffer(); // 分区字段部分
         bodysb.append("-- "+sheet.getCell(0, 0).getContents()+" DDL：\r\n");
         //bodysb.append("-- SELECT * FROM "+sheet.getCell(0, 0).getContents()+ ";\r\n");
-        bodysb.append("DELETE TABLE "+sheet.getCell(0, 0).getContents()+ ";\r\n");
+        bodysb.append("DROP TABLE "+sheet.getCell(0, 0).getContents()+ ";\r\n");
         bodysb.append("CREATE TABLE "+sheet.getCell(0, 0).getContents());
         // 表头部分
         bodysb.append(" (\r\n");

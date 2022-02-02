@@ -1,7 +1,7 @@
 package com.element.hydrogen.service.user;
 
+import com.element.hydrogen.entity.auth.DonAccountInfoEntity;
 import com.element.hydrogen.entity.common.ResponseJson;
-import com.element.hydrogen.entity.user.AccountCodeEntity;
 
 /**
  * @InterfaceName LoginService
@@ -11,5 +11,5 @@ import com.element.hydrogen.entity.user.AccountCodeEntity;
  * @Version 1.0
  */
 public interface LoginService {
-    ResponseJson check(AccountCodeEntity accountCodeEntity);
+    ResponseJson check(DonAccountInfoEntity donAccountInfoEntity);
 }
