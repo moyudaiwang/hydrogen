@@ -1,19 +1,18 @@
 package com.element.hydrogen.controller.web.book;
 
-import com.element.hydrogen.entity.book.BookInfoEntity;
+import cn.hutool.http.server.HttpServerRequest;
+import com.element.hydrogen.constant.common.ResponseJsonConstant;
+import com.element.hydrogen.entity.book.DonBookInfoEntity;
 import com.element.hydrogen.entity.common.ResponseJson;
 import com.element.hydrogen.service.book.BookInfoService;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
+import java.util.List;
 
 /**
  * @ClassName BookInfoController
- * @Description TODO
+ * @Description 图书信息
  * @Author yanyu
  * @Date 2020/11/10 22:26
  * @Version 1.0
@@ -25,92 +24,51 @@ public class BookInfoController {
     @Autowired
     private BookInfoService bookInfoService;
 
-    /**
-     * 分页查询图书列表
-     * @param bookInfoEntity
-     * @return
-     */
+    public static ResponseJsonConstant res;
+
     @CrossOrigin
-    @RequestMapping(value = "/queryBookInfoPage",method = RequestMethod.POST)
-    public PageInfo<BookInfoEntity> queryBookInfoPage(@RequestBody BookInfoEntity bookInfoEntity){
-        PageInfo<BookInfoEntity> pageInfo = new PageInfo<BookInfoEntity>();
-        PageHelper.startPage(bookInfoEntity.getPageNum(), bookInfoEntity.getPageSize());
-        pageInfo =bookInfoService.queryBookInfoPage(bookInfoEntity);
-        return pageInfo;
+    @RequestMapping(value = "/query",method = RequestMethod.POST)
+    public ResponseJson query(@RequestBody DonBookInfoEntity donBookInfoEntity){
+        return bookInfoService.query(donBookInfoEntity);
     }
 
-    /**
-     * 新增图书信息
-     * @param bookInfoEntity
-     * @return
-     */
     @CrossOrigin
-    @RequestMapping(value = "/insertBookInfo",method = RequestMethod.POST)
-    public ResponseJson insertBookInfo(@RequestBody BookInfoEntity bookInfoEntity){
+    @RequestMapping(value = "/insert",method = RequestMethod.POST)
+    public ResponseJson insert(HttpServerRequest request, @RequestBody DonBookInfoEntity donBookInfoEntity){
         ResponseJson resJson = new ResponseJson();
-        bookInfoEntity.setOperator("molecule");
+        donBookInfoEntity.setOperator("molecule");
         try{
-            resJson =bookInfoService.insertBookInfo(bookInfoEntity);
+            resJson =bookInfoService.insert(donBookInfoEntity);
         }catch (Exception e){
-            resJson.setCode("500");
-            resJson.setStatus("false");
-            resJson.setMsg("新增失败");
+            resJson.setCode(res.FAIL);
+            resJson.setMsg(res.FAIL_ADD);
         }
         return resJson;
     }
-    /**
-     * 修改图书信息
-     * @param bookInfoEntity
-     * @return
-     */
+
     @CrossOrigin
-    @RequestMapping(value = "/updateBookInfo",method = RequestMethod.POST)
-    public ResponseJson updateBookInfo(@RequestBody BookInfoEntity bookInfoEntity){
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public ResponseJson update(HttpServerRequest request,@RequestBody DonBookInfoEntity donBookInfoEntity){
         ResponseJson resJson = new ResponseJson();
-        bookInfoEntity.setOperator("molecule");
+        donBookInfoEntity.setOperator("molecule");
         try{
-            resJson =bookInfoService.updateBookInfo(bookInfoEntity);
+            resJson =bookInfoService.update(donBookInfoEntity);
         }catch (Exception e){
-            resJson.setCode("500");
-            resJson.setStatus("false");
-            resJson.setMsg("修改失败");
+            resJson.setCode(res.FAIL);
+            resJson.setMsg(res.FAIL_UPD);
         }
         return resJson;
     }
-    /**
-     * 删除图书信息
-     * @param bookInfoEntity
-     * @return
-     */
+
     @CrossOrigin
-    @RequestMapping(value = "/deleteBookInfo",method = RequestMethod.POST)
-    public ResponseJson deleteBookInfo(@RequestBody BookInfoEntity bookInfoEntity){
-        ResponseJson resJson = new ResponseJson();
-        bookInfoEntity.setOperator("molecule");
-        try{
-            resJson =bookInfoService.deleteBookInfo(bookInfoEntity);
-        }catch (Exception e){
-            resJson.setCode("500");
-            resJson.setStatus("false");
-            resJson.setMsg("删除失败");
-        }
-        return resJson;
-    }
-    /**
-     * 批量删除图书信息
-     * @param donBookInfoIds
-     * @return
-     */
-    @CrossOrigin
-    @RequestMapping(value = "/deleteBatchBookInfo",method = RequestMethod.POST)
-    public ResponseJson deleteBatchBookInfo(@RequestParam String donBookInfoIds) throws UnsupportedEncodingException {
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    public ResponseJson delete(@RequestBody List<DonBookInfoEntity> donBookInfoEntityList){
         ResponseJson resJson = new ResponseJson();
         try{
-            resJson =bookInfoService.deleteBatchBookInfo(donBookInfoIds);
+            resJson =bookInfoService.delete(donBookInfoEntityList);
         }catch (Exception e){
-            resJson.setCode("500");
-            resJson.setStatus("false");
-            resJson.setMsg("删除失败");
+            resJson.setCode(res.FAIL);
+            resJson.setMsg(res.FAIL_DEL);
         }
         return resJson;
     }
