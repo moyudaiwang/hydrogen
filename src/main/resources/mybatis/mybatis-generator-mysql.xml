@@ -18,20 +18,31 @@
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
-        <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.element.hydrogen.utils.factory.mappingFactory.entity" targetProject="src/main/java">
+        <!--生成Model类存放位置:com.element.hydrogen.utils.factory.mappingFactory.entity-->
+        <javaModelGenerator targetPackage="com.element.hydrogen.entity.base" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-        <!--生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="com.element.hydrogen.utils.factory.mappingFactory.mapper" targetProject="src/main/java">
+        <!--生成映射文件存放位置:com.element.hydrogen.utils.factory.mappingFactory.mapper-->
+        <sqlMapGenerator targetPackage="com.element.hydrogen.mapper.base" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-        <!--生成Dao类存放位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.element.hydrogen.utils.factory.mappingFactory.mapper" targetProject="src/main/java">
+        <!--生成Dao类存放位置:com.element.hydrogen.utils.factory.mappingFactory.mapper-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.element.hydrogen.mapper.base" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--生成对应表及类名-->
-        <table tableName="DON_USER_INFO" domainObjectName="MyUserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_ACCOUNT_INFO" domainObjectName="DonAccountInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_AREA_CFG" domainObjectName="DonAreaCfg" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_BOOK_FLOW" domainObjectName="DonBookFlow" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_BOOK_INFO" domainObjectName="DonBookInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_LOG_INFO" domainObjectName="DonLogInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_MENU_INFO" domainObjectName="DonMenuInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_ROLE_INFO" domainObjectName="DonRoleInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_ROLE_MENU_REL" domainObjectName="DonRoleMenuRel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_ROLE_USER_REL" domainObjectName="DonRoleUserRel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_TABLE_INFO" domainObjectName="DonTableInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="DON_USER_INFO" domainObjectName="DonUserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
     </context>
 </generatorConfiguration>
