@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.element.hydrogen.mapper.auth.DonMenuInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.element.hydrogen.entity.auth.DonMenuInfoEntity" >
+    <id column="DON_MENU_INFO_ID" property="donMenuInfoId" jdbcType="VARCHAR" />
+    <result column="MENU_ID" property="menuId" jdbcType="VARCHAR" />
+    <result column="MENU_PID" property="menuPid" jdbcType="VARCHAR" />
+    <result column="MENU_NAME" property="menuName" jdbcType="VARCHAR" />
+    <result column="MENU_STATUS" property="menuStatus" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="DATE" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DON_MENU_INFO_ID, MENU_ID, MENU_PID, MENU_NAME, MENU_STATUS, REMARK, CREATE_BY, CREATE_DATE, 
+    UPDATE_BY, UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from don_menu_info
+    where DON_MENU_INFO_ID = #{donMenuInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from don_menu_info
+    where DON_MENU_INFO_ID = #{donMenuInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.element.hydrogen.entity.auth.DonMenuInfoEntity" >
+    insert into don_menu_info (DON_MENU_INFO_ID, MENU_ID, MENU_PID, 
+      MENU_NAME, MENU_STATUS, REMARK, 
+      CREATE_BY, CREATE_DATE, UPDATE_BY, 
+      UPDATE_DATE)
+    values (#{donMenuInfoId,jdbcType=VARCHAR}, #{menuId,jdbcType=VARCHAR}, #{menuPid,jdbcType=VARCHAR}, 
+      #{menuName,jdbcType=VARCHAR}, #{menuStatus,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.element.hydrogen.entity.auth.DonMenuInfoEntity" >
+    insert into don_menu_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="donMenuInfoId != null" >
+        DON_MENU_INFO_ID,
+      </if>
+      <if test="menuId != null" >
+        MENU_ID,
+      </if>
+      <if test="menuPid != null" >
+        MENU_PID,
+      </if>
+      <if test="menuName != null" >
+        MENU_NAME,
+      </if>
+      <if test="menuStatus != null" >
+        MENU_STATUS,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="donMenuInfoId != null" >
+        #{donMenuInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="menuId != null" >
+        #{menuId,jdbcType=VARCHAR},
+      </if>
+      <if test="menuPid != null" >
+        #{menuPid,jdbcType=VARCHAR},
+      </if>
+      <if test="menuName != null" >
+        #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuStatus != null" >
+        #{menuStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.auth.DonMenuInfoEntity" >
+    update don_menu_info
+    <set >
+      <if test="menuId != null" >
+        MENU_ID = #{menuId,jdbcType=VARCHAR},
+      </if>
+      <if test="menuPid != null" >
+        MENU_PID = #{menuPid,jdbcType=VARCHAR},
+      </if>
+      <if test="menuName != null" >
+        MENU_NAME = #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="menuStatus != null" >
+        MENU_STATUS = #{menuStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    where DON_MENU_INFO_ID = #{donMenuInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.auth.DonMenuInfoEntity" >
+    update don_menu_info
+    set MENU_ID = #{menuId,jdbcType=VARCHAR},
+      MENU_PID = #{menuPid,jdbcType=VARCHAR},
+      MENU_NAME = #{menuName,jdbcType=VARCHAR},
+      MENU_STATUS = #{menuStatus,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = now()
+    where DON_MENU_INFO_ID = #{donMenuInfoId,jdbcType=VARCHAR}
+  </update>
+
+  <!--分页查询-->
+  <select id="query" parameterType="com.element.hydrogen.entity.auth.DonMenuInfoEntity" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from don_menu_info a
+    where 1=1
+    <if test="queryName != null and queryName != ''">
+      and (MENU_ID = #{queryName,jdbcType=VARCHAR}
+      or MENU_NAME = #{queryName,jdbcType=VARCHAR}
+      or MENU_STATUS = #{queryName,jdbcType=VARCHAR}
+      )
+    </if>
+  </select>
+</mapper>

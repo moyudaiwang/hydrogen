@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.element.hydrogen.mapper.book.DonBookFlowMapper" >
+  <resultMap id="BaseResultMap" type="com.element.hydrogen.entity.book.DonBookFlowEntity" >
+    <id column="DON_BOOK_FLOW_ID" property="donBookFlowId" jdbcType="VARCHAR" />
+    <result column="BOOK_ID" property="bookId" jdbcType="VARCHAR" />
+    <result column="ISBN" property="isbn" jdbcType="VARCHAR" />
+    <result column="ISBN_PID" property="isbnPid" jdbcType="VARCHAR" />
+    <result column="ISBN_SID" property="isbnSid" jdbcType="VARCHAR" />
+    <result column="BOOK_NAME" property="bookName" jdbcType="VARCHAR" />
+    <result column="BOOK_FOREIGN_NAME" property="bookForeignName" jdbcType="VARCHAR" />
+    <result column="VISION_DATE" property="visionDate" jdbcType="DATE" />
+    <result column="VISION_MAN" property="visionMan" jdbcType="VARCHAR" />
+    <result column="VISION_GROUP" property="visionGroup" jdbcType="VARCHAR" />
+    <result column="SHOP_PRICE" property="shopPrice" jdbcType="VARCHAR" />
+    <result column="SHOP_GRADE" property="shopGrade" jdbcType="VARCHAR" />
+    <result column="SHOP_MAN" property="shopMan" jdbcType="VARCHAR" />
+    <result column="SHOP_PLATFORM" property="shopPlatform" jdbcType="VARCHAR" />
+    <result column="SHOP_ADDRESS" property="shopAddress" jdbcType="VARCHAR" />
+    <result column="SHOP_UNIT" property="shopUnit" jdbcType="VARCHAR" />
+    <result column="SHOP_DATE" property="shopDate" jdbcType="DATE" />
+    <result column="SHOP_AIM" property="shopAim" jdbcType="VARCHAR" />
+    <result column="COLLECTOR" property="collector" jdbcType="VARCHAR" />
+    <result column="COLLECTION_ADDRESS" property="collectionAddress" jdbcType="VARCHAR" />
+    <result column="RACK_NUM" property="rackNum" jdbcType="VARCHAR" />
+    <result column="EXPORT_DATE" property="exportDate" jdbcType="DATE" />
+    <result column="EXPORT_MAN" property="exportMan" jdbcType="VARCHAR" />
+    <result column="EXPORT_PRICE" property="exportPrice" jdbcType="VARCHAR" />
+    <result column="EXPORT_GRADE" property="exportGrade" jdbcType="VARCHAR" />
+    <result column="RECEIVING_UNIT" property="receivingUnit" jdbcType="VARCHAR" />
+    <result column="PLAN_HOMEWARD_DATE" property="planHomewardDate" jdbcType="DATE" />
+    <result column="PLAN_HOMEWARD_ADDRESS" property="planHomewardAddress" jdbcType="VARCHAR" />
+    <result column="HOMEWARD_DATE" property="homewardDate" jdbcType="DATE" />
+    <result column="HOMEWARD_ADDRESS" property="homewardAddress" jdbcType="VARCHAR" />
+    <result column="HOMEWARD_MAN" property="homewardMan" jdbcType="VARCHAR" />
+    <result column="BOOK_STATUS" property="bookStatus" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="DATE" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DON_BOOK_FLOW_ID, BOOK_ID, ISBN, ISBN_PID, ISBN_SID, BOOK_NAME, BOOK_FOREIGN_NAME, 
+    VISION_DATE, VISION_MAN, VISION_GROUP, SHOP_PRICE, SHOP_GRADE, SHOP_MAN, SHOP_PLATFORM, 
+    SHOP_ADDRESS, SHOP_UNIT, SHOP_DATE, SHOP_AIM, COLLECTOR, COLLECTION_ADDRESS, RACK_NUM, 
+    EXPORT_DATE, EXPORT_MAN, EXPORT_PRICE, EXPORT_GRADE, RECEIVING_UNIT, PLAN_HOMEWARD_DATE, 
+    PLAN_HOMEWARD_ADDRESS, HOMEWARD_DATE, HOMEWARD_ADDRESS, HOMEWARD_MAN, BOOK_STATUS, 
+    REMARK, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from don_book_flow
+    where DON_BOOK_FLOW_ID = #{donBookFlowId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from don_book_flow
+    where DON_BOOK_FLOW_ID = #{donBookFlowId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.element.hydrogen.entity.book.DonBookFlowEntity" >
+    insert into don_book_flow (DON_BOOK_FLOW_ID, BOOK_ID, ISBN, 
+      ISBN_PID, ISBN_SID, BOOK_NAME, 
+      BOOK_FOREIGN_NAME, VISION_DATE, VISION_MAN, 
+      VISION_GROUP, SHOP_PRICE, SHOP_GRADE, 
+      SHOP_MAN, SHOP_PLATFORM, SHOP_ADDRESS, 
+      SHOP_UNIT, SHOP_DATE, SHOP_AIM, 
+      COLLECTOR, COLLECTION_ADDRESS, RACK_NUM, 
+      EXPORT_DATE, EXPORT_MAN, EXPORT_PRICE, 
+      EXPORT_GRADE, RECEIVING_UNIT, PLAN_HOMEWARD_DATE, 
+      PLAN_HOMEWARD_ADDRESS, HOMEWARD_DATE, HOMEWARD_ADDRESS, 
+      HOMEWARD_MAN, BOOK_STATUS, REMARK, 
+      CREATE_BY, CREATE_DATE, UPDATE_BY, 
+      UPDATE_DATE)
+    values (#{donBookFlowId,jdbcType=VARCHAR}, #{bookId,jdbcType=VARCHAR}, #{isbn,jdbcType=VARCHAR}, 
+      #{isbnPid,jdbcType=VARCHAR}, #{isbnSid,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, 
+      #{bookForeignName,jdbcType=VARCHAR}, #{visionDate,jdbcType=DATE}, #{visionMan,jdbcType=VARCHAR}, 
+      #{visionGroup,jdbcType=VARCHAR}, #{shopPrice,jdbcType=VARCHAR}, #{shopGrade,jdbcType=VARCHAR}, 
+      #{shopMan,jdbcType=VARCHAR}, #{shopPlatform,jdbcType=VARCHAR}, #{shopAddress,jdbcType=VARCHAR}, 
+      #{shopUnit,jdbcType=VARCHAR}, #{shopDate,jdbcType=DATE}, #{shopAim,jdbcType=VARCHAR}, 
+      #{collector,jdbcType=VARCHAR}, #{collectionAddress,jdbcType=VARCHAR}, #{rackNum,jdbcType=VARCHAR}, 
+      #{exportDate,jdbcType=DATE}, #{exportMan,jdbcType=VARCHAR}, #{exportPrice,jdbcType=VARCHAR}, 
+      #{exportGrade,jdbcType=VARCHAR}, #{receivingUnit,jdbcType=VARCHAR}, #{planHomewardDate,jdbcType=DATE}, 
+      #{planHomewardAddress,jdbcType=VARCHAR}, #{homewardDate,jdbcType=DATE}, #{homewardAddress,jdbcType=VARCHAR}, 
+      #{homewardMan,jdbcType=VARCHAR}, #{bookStatus,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.element.hydrogen.entity.book.DonBookFlowEntity" >
+    insert into don_book_flow
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="donBookFlowId != null" >
+        DON_BOOK_FLOW_ID,
+      </if>
+      <if test="bookId != null" >
+        BOOK_ID,
+      </if>
+      <if test="isbn != null" >
+        ISBN,
+      </if>
+      <if test="isbnPid != null" >
+        ISBN_PID,
+      </if>
+      <if test="isbnSid != null" >
+        ISBN_SID,
+      </if>
+      <if test="bookName != null" >
+        BOOK_NAME,
+      </if>
+      <if test="bookForeignName != null" >
+        BOOK_FOREIGN_NAME,
+      </if>
+      <if test="visionDate != null" >
+        VISION_DATE,
+      </if>
+      <if test="visionMan != null" >
+        VISION_MAN,
+      </if>
+      <if test="visionGroup != null" >
+        VISION_GROUP,
+      </if>
+      <if test="shopPrice != null" >
+        SHOP_PRICE,
+      </if>
+      <if test="shopGrade != null" >
+        SHOP_GRADE,
+      </if>
+      <if test="shopMan != null" >
+        SHOP_MAN,
+      </if>
+      <if test="shopPlatform != null" >
+        SHOP_PLATFORM,
+      </if>
+      <if test="shopAddress != null" >
+        SHOP_ADDRESS,
+      </if>
+      <if test="shopUnit != null" >
+        SHOP_UNIT,
+      </if>
+      <if test="shopDate != null" >
+        SHOP_DATE,
+      </if>
+      <if test="shopAim != null" >
+        SHOP_AIM,
+      </if>
+      <if test="collector != null" >
+        COLLECTOR,
+      </if>
+      <if test="collectionAddress != null" >
+        COLLECTION_ADDRESS,
+      </if>
+      <if test="rackNum != null" >
+        RACK_NUM,
+      </if>
+      <if test="exportDate != null" >
+        EXPORT_DATE,
+      </if>
+      <if test="exportMan != null" >
+        EXPORT_MAN,
+      </if>
+      <if test="exportPrice != null" >
+        EXPORT_PRICE,
+      </if>
+      <if test="exportGrade != null" >
+        EXPORT_GRADE,
+      </if>
+      <if test="receivingUnit != null" >
+        RECEIVING_UNIT,
+      </if>
+      <if test="planHomewardDate != null" >
+        PLAN_HOMEWARD_DATE,
+      </if>
+      <if test="planHomewardAddress != null" >
+        PLAN_HOMEWARD_ADDRESS,
+      </if>
+      <if test="homewardDate != null" >
+        HOMEWARD_DATE,
+      </if>
+      <if test="homewardAddress != null" >
+        HOMEWARD_ADDRESS,
+      </if>
+      <if test="homewardMan != null" >
+        HOMEWARD_MAN,
+      </if>
+      <if test="bookStatus != null" >
+        BOOK_STATUS,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="donBookFlowId != null" >
+        #{donBookFlowId,jdbcType=VARCHAR},
+      </if>
+      <if test="bookId != null" >
+        #{bookId,jdbcType=VARCHAR},
+      </if>
+      <if test="isbn != null" >
+        #{isbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isbnPid != null" >
+        #{isbnPid,jdbcType=VARCHAR},
+      </if>
+      <if test="isbnSid != null" >
+        #{isbnSid,jdbcType=VARCHAR},
+      </if>
+      <if test="bookName != null" >
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookForeignName != null" >
+        #{bookForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="visionDate != null" >
+        #{visionDate,jdbcType=DATE},
+      </if>
+      <if test="visionMan != null" >
+        #{visionMan,jdbcType=VARCHAR},
+      </if>
+      <if test="visionGroup != null" >
+        #{visionGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPrice != null" >
+        #{shopPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="shopGrade != null" >
+        #{shopGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="shopMan != null" >
+        #{shopMan,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPlatform != null" >
+        #{shopPlatform,jdbcType=VARCHAR},
+      </if>
+      <if test="shopAddress != null" >
+        #{shopAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="shopUnit != null" >
+        #{shopUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="shopDate != null" >
+        #{shopDate,jdbcType=DATE},
+      </if>
+      <if test="shopAim != null" >
+        #{shopAim,jdbcType=VARCHAR},
+      </if>
+      <if test="collector != null" >
+        #{collector,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionAddress != null" >
+        #{collectionAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="rackNum != null" >
+        #{rackNum,jdbcType=VARCHAR},
+      </if>
+      <if test="exportDate != null" >
+        #{exportDate,jdbcType=DATE},
+      </if>
+      <if test="exportMan != null" >
+        #{exportMan,jdbcType=VARCHAR},
+      </if>
+      <if test="exportPrice != null" >
+        #{exportPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="exportGrade != null" >
+        #{exportGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="receivingUnit != null" >
+        #{receivingUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="planHomewardDate != null" >
+        #{planHomewardDate,jdbcType=DATE},
+      </if>
+      <if test="planHomewardAddress != null" >
+        #{planHomewardAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homewardDate != null" >
+        #{homewardDate,jdbcType=DATE},
+      </if>
+      <if test="homewardAddress != null" >
+        #{homewardAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homewardMan != null" >
+        #{homewardMan,jdbcType=VARCHAR},
+      </if>
+      <if test="bookStatus != null" >
+        #{bookStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.book.DonBookFlowEntity" >
+    update don_book_flow
+    <set >
+      <if test="bookId != null" >
+        BOOK_ID = #{bookId,jdbcType=VARCHAR},
+      </if>
+      <if test="isbn != null" >
+        ISBN = #{isbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isbnPid != null" >
+        ISBN_PID = #{isbnPid,jdbcType=VARCHAR},
+      </if>
+      <if test="isbnSid != null" >
+        ISBN_SID = #{isbnSid,jdbcType=VARCHAR},
+      </if>
+      <if test="bookName != null" >
+        BOOK_NAME = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookForeignName != null" >
+        BOOK_FOREIGN_NAME = #{bookForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="visionDate != null" >
+        VISION_DATE = #{visionDate,jdbcType=DATE},
+      </if>
+      <if test="visionMan != null" >
+        VISION_MAN = #{visionMan,jdbcType=VARCHAR},
+      </if>
+      <if test="visionGroup != null" >
+        VISION_GROUP = #{visionGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPrice != null" >
+        SHOP_PRICE = #{shopPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="shopGrade != null" >
+        SHOP_GRADE = #{shopGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="shopMan != null" >
+        SHOP_MAN = #{shopMan,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPlatform != null" >
+        SHOP_PLATFORM = #{shopPlatform,jdbcType=VARCHAR},
+      </if>
+      <if test="shopAddress != null" >
+        SHOP_ADDRESS = #{shopAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="shopUnit != null" >
+        SHOP_UNIT = #{shopUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="shopDate != null" >
+        SHOP_DATE = #{shopDate,jdbcType=DATE},
+      </if>
+      <if test="shopAim != null" >
+        SHOP_AIM = #{shopAim,jdbcType=VARCHAR},
+      </if>
+      <if test="collector != null" >
+        COLLECTOR = #{collector,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionAddress != null" >
+        COLLECTION_ADDRESS = #{collectionAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="rackNum != null" >
+        RACK_NUM = #{rackNum,jdbcType=VARCHAR},
+      </if>
+      <if test="exportDate != null" >
+        EXPORT_DATE = #{exportDate,jdbcType=DATE},
+      </if>
+      <if test="exportMan != null" >
+        EXPORT_MAN = #{exportMan,jdbcType=VARCHAR},
+      </if>
+      <if test="exportPrice != null" >
+        EXPORT_PRICE = #{exportPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="exportGrade != null" >
+        EXPORT_GRADE = #{exportGrade,jdbcType=VARCHAR},
+      </if>
+      <if test="receivingUnit != null" >
+        RECEIVING_UNIT = #{receivingUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="planHomewardDate != null" >
+        PLAN_HOMEWARD_DATE = #{planHomewardDate,jdbcType=DATE},
+      </if>
+      <if test="planHomewardAddress != null" >
+        PLAN_HOMEWARD_ADDRESS = #{planHomewardAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homewardDate != null" >
+        HOMEWARD_DATE = #{homewardDate,jdbcType=DATE},
+      </if>
+      <if test="homewardAddress != null" >
+        HOMEWARD_ADDRESS = #{homewardAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homewardMan != null" >
+        HOMEWARD_MAN = #{homewardMan,jdbcType=VARCHAR},
+      </if>
+      <if test="bookStatus != null" >
+        BOOK_STATUS = #{bookStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    where DON_BOOK_FLOW_ID = #{donBookFlowId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.book.DonBookFlowEntity" >
+    update don_book_flow
+    set BOOK_ID = #{bookId,jdbcType=VARCHAR},
+      ISBN = #{isbn,jdbcType=VARCHAR},
+      ISBN_PID = #{isbnPid,jdbcType=VARCHAR},
+      ISBN_SID = #{isbnSid,jdbcType=VARCHAR},
+      BOOK_NAME = #{bookName,jdbcType=VARCHAR},
+      BOOK_FOREIGN_NAME = #{bookForeignName,jdbcType=VARCHAR},
+      VISION_DATE = #{visionDate,jdbcType=DATE},
+      VISION_MAN = #{visionMan,jdbcType=VARCHAR},
+      VISION_GROUP = #{visionGroup,jdbcType=VARCHAR},
+      SHOP_PRICE = #{shopPrice,jdbcType=VARCHAR},
+      SHOP_GRADE = #{shopGrade,jdbcType=VARCHAR},
+      SHOP_MAN = #{shopMan,jdbcType=VARCHAR},
+      SHOP_PLATFORM = #{shopPlatform,jdbcType=VARCHAR},
+      SHOP_ADDRESS = #{shopAddress,jdbcType=VARCHAR},
+      SHOP_UNIT = #{shopUnit,jdbcType=VARCHAR},
+      SHOP_DATE = #{shopDate,jdbcType=DATE},
+      SHOP_AIM = #{shopAim,jdbcType=VARCHAR},
+      COLLECTOR = #{collector,jdbcType=VARCHAR},
+      COLLECTION_ADDRESS = #{collectionAddress,jdbcType=VARCHAR},
+      RACK_NUM = #{rackNum,jdbcType=VARCHAR},
+      EXPORT_DATE = #{exportDate,jdbcType=DATE},
+      EXPORT_MAN = #{exportMan,jdbcType=VARCHAR},
+      EXPORT_PRICE = #{exportPrice,jdbcType=VARCHAR},
+      EXPORT_GRADE = #{exportGrade,jdbcType=VARCHAR},
+      RECEIVING_UNIT = #{receivingUnit,jdbcType=VARCHAR},
+      PLAN_HOMEWARD_DATE = #{planHomewardDate,jdbcType=DATE},
+      PLAN_HOMEWARD_ADDRESS = #{planHomewardAddress,jdbcType=VARCHAR},
+      HOMEWARD_DATE = #{homewardDate,jdbcType=DATE},
+      HOMEWARD_ADDRESS = #{homewardAddress,jdbcType=VARCHAR},
+      HOMEWARD_MAN = #{homewardMan,jdbcType=VARCHAR},
+      BOOK_STATUS = #{bookStatus,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = now()
+    where DON_BOOK_FLOW_ID = #{donBookFlowId,jdbcType=VARCHAR}
+  </update>
+
+  <!--分页查询-->
+  <select id="query" parameterType="com.element.hydrogen.entity.book.DonBookFlowEntity" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from don_book_flow a
+    where 1=1
+    <if test="queryName != null and queryName != ''">
+      and (ISBN = #{queryName,jdbcType=VARCHAR}
+      or BOOK_NAME = #{queryName,jdbcType=VARCHAR}
+      or VISION_MAN = #{queryName,jdbcType=VARCHAR}
+      )
+    </if>
+  </select>
+</mapper>

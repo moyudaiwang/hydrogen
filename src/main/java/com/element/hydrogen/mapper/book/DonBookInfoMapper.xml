@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.element.hydrogen.mapper.book.DonBookInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.element.hydrogen.entity.book.DonBookInfoEntity" >
+    <id column="DON_BOOK_INFO_ID" property="donBookInfoId" jdbcType="VARCHAR" />
+    <result column="BOOK_ID" property="bookId" jdbcType="VARCHAR" />
+    <result column="ISBN" property="isbn" jdbcType="VARCHAR" />
+    <result column="ISBN_PID" property="isbnPid" jdbcType="VARCHAR" />
+    <result column="ISBN_SID" property="isbnSid" jdbcType="VARCHAR" />
+    <result column="BOOK_NAME" property="bookName" jdbcType="VARCHAR" />
+    <result column="BOOK_FOREIGN_NAME" property="bookForeignName" jdbcType="VARCHAR" />
+    <result column="AUTHOR" property="author" jdbcType="VARCHAR" />
+    <result column="AUTHOR_FOREIGN_NAME" property="authorForeignName" jdbcType="VARCHAR" />
+    <result column="AUTHOR_COUNTRY" property="authorCountry" jdbcType="VARCHAR" />
+    <result column="TRANSLATOR" property="translator" jdbcType="VARCHAR" />
+    <result column="TRANSLATOR_FOREIGN_NAME" property="translatorForeignName" jdbcType="VARCHAR" />
+    <result column="EDITOR_CHARGE" property="editorCharge" jdbcType="VARCHAR" />
+    <result column="COVER_DESIGN" property="coverDesign" jdbcType="VARCHAR" />
+    <result column="COLLECTION" property="collection" jdbcType="VARCHAR" />
+    <result column="PRESS" property="press" jdbcType="VARCHAR" />
+    <result column="ISSUE" property="issue" jdbcType="VARCHAR" />
+    <result column="PRINT_HOUSE" property="printHouse" jdbcType="VARCHAR" />
+    <result column="PRICE" property="price" jdbcType="VARCHAR" />
+    <result column="CURRENCY_TYPE" property="currencyType" jdbcType="VARCHAR" />
+    <result column="EDITION_FIRST_DATE" property="editionFirstDate" jdbcType="VARCHAR" />
+    <result column="IMPRESSION_FIRST_DATE" property="impressionFirstDate" jdbcType="VARCHAR" />
+    <result column="EDITION_DATE" property="editionDate" jdbcType="VARCHAR" />
+    <result column="IMPRESSION_DATE" property="impressionDate" jdbcType="VARCHAR" />
+    <result column="EDITION" property="edition" jdbcType="VARCHAR" />
+    <result column="IMPRESSION" property="impression" jdbcType="VARCHAR" />
+    <result column="SHEETS_NUM" property="sheetsNum" jdbcType="VARCHAR" />
+    <result column="BOOK_FORMAT" property="bookFormat" jdbcType="VARCHAR" />
+    <result column="WORD_NUM" property="wordNum" jdbcType="VARCHAR" />
+    <result column="BOOK_PAGE" property="bookPage" jdbcType="VARCHAR" />
+    <result column="PRINT_NUM_START" property="printNumStart" jdbcType="VARCHAR" />
+    <result column="PRINT_NUM_END" property="printNumEnd" jdbcType="VARCHAR" />
+    <result column="PRINT_NUM" property="printNum" jdbcType="VARCHAR" />
+    <result column="LANGUAGE" property="language" jdbcType="VARCHAR" />
+    <result column="CLC" property="clc" jdbcType="VARCHAR" />
+    <result column="FLC" property="flc" jdbcType="VARCHAR" />
+    <result column="BIND_TYPE" property="bindType" jdbcType="VARCHAR" />
+    <result column="LWH" property="lwh" jdbcType="VARCHAR" />
+    <result column="VOLUME" property="volume" jdbcType="VARCHAR" />
+    <result column="WEIGHT" property="weight" jdbcType="VARCHAR" />
+    <result column="SIGN_FLAG" property="signFlag" jdbcType="VARCHAR" />
+    <result column="SIGNET_FLAG" property="signetFlag" jdbcType="VARCHAR" />
+    <result column="BOOK_AVATAR" property="bookAvatar" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="DATE" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DON_BOOK_INFO_ID, BOOK_ID, ISBN, ISBN_PID, ISBN_SID, BOOK_NAME, BOOK_FOREIGN_NAME, 
+    AUTHOR, AUTHOR_FOREIGN_NAME, AUTHOR_COUNTRY, TRANSLATOR, TRANSLATOR_FOREIGN_NAME, 
+    EDITOR_CHARGE, COVER_DESIGN, COLLECTION, PRESS, ISSUE, PRINT_HOUSE, PRICE, CURRENCY_TYPE, 
+    EDITION_FIRST_DATE, IMPRESSION_FIRST_DATE, EDITION_DATE, IMPRESSION_DATE, EDITION, 
+    IMPRESSION, SHEETS_NUM, BOOK_FORMAT, WORD_NUM, BOOK_PAGE, PRINT_NUM_START, PRINT_NUM_END, 
+    PRINT_NUM, LANGUAGE, CLC, FLC, BIND_TYPE, LWH, VOLUME, WEIGHT, SIGN_FLAG, SIGNET_FLAG, 
+    BOOK_AVATAR, REMARK, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from don_book_info
+    where DON_BOOK_INFO_ID = #{donBookInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from don_book_info
+    where DON_BOOK_INFO_ID = #{donBookInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.element.hydrogen.entity.book.DonBookInfoEntity" >
+    insert into don_book_info (DON_BOOK_INFO_ID, BOOK_ID, ISBN, 
+      ISBN_PID, ISBN_SID, BOOK_NAME, 
+      BOOK_FOREIGN_NAME, AUTHOR, AUTHOR_FOREIGN_NAME, 
+      AUTHOR_COUNTRY, TRANSLATOR, TRANSLATOR_FOREIGN_NAME, 
+      EDITOR_CHARGE, COVER_DESIGN, COLLECTION, 
+      PRESS, ISSUE, PRINT_HOUSE, 
+      PRICE, CURRENCY_TYPE, EDITION_FIRST_DATE, 
+      IMPRESSION_FIRST_DATE, EDITION_DATE, IMPRESSION_DATE, 
+      EDITION, IMPRESSION, SHEETS_NUM, 
+      BOOK_FORMAT, WORD_NUM, BOOK_PAGE, 
+      PRINT_NUM_START, PRINT_NUM_END, PRINT_NUM, 
+      LANGUAGE, CLC, FLC, 
+      BIND_TYPE, LWH, VOLUME, 
+      WEIGHT, SIGN_FLAG, SIGNET_FLAG, 
+      BOOK_AVATAR, REMARK, CREATE_BY,
+      CREATE_DATE, UPDATE_BY, UPDATE_DATE
+      )
+    values (REPLACE(UUID(),"-",""), REPLACE(UUID(),"-",""), #{isbn,jdbcType=VARCHAR},
+      #{isbnPid,jdbcType=VARCHAR}, #{isbnSid,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, 
+      #{bookForeignName,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{authorForeignName,jdbcType=VARCHAR}, 
+      #{authorCountry,jdbcType=VARCHAR}, #{translator,jdbcType=VARCHAR}, #{translatorForeignName,jdbcType=VARCHAR}, 
+      #{editorCharge,jdbcType=VARCHAR}, #{coverDesign,jdbcType=VARCHAR}, #{collection,jdbcType=VARCHAR}, 
+      #{press,jdbcType=VARCHAR}, #{issue,jdbcType=VARCHAR}, #{printHouse,jdbcType=VARCHAR}, 
+      #{price,jdbcType=VARCHAR}, #{currencyType,jdbcType=VARCHAR}, #{editionFirstDate,jdbcType=VARCHAR}, 
+      #{impressionFirstDate,jdbcType=VARCHAR}, #{editionDate,jdbcType=VARCHAR}, #{impressionDate,jdbcType=VARCHAR}, 
+      #{edition,jdbcType=VARCHAR}, #{impression,jdbcType=VARCHAR}, #{sheetsNum,jdbcType=VARCHAR}, 
+      #{bookFormat,jdbcType=VARCHAR}, #{wordNum,jdbcType=VARCHAR}, #{bookPage,jdbcType=VARCHAR}, 
+      #{printNumStart,jdbcType=VARCHAR}, #{printNumEnd,jdbcType=VARCHAR}, #{printNum,jdbcType=VARCHAR}, 
+      #{language,jdbcType=VARCHAR}, #{clc,jdbcType=VARCHAR}, #{flc,jdbcType=VARCHAR}, 
+      #{bindType,jdbcType=VARCHAR}, #{lwh,jdbcType=VARCHAR}, #{volume,jdbcType=VARCHAR}, 
+      #{weight,jdbcType=VARCHAR}, #{signFlag,jdbcType=VARCHAR}, #{signetFlag,jdbcType=VARCHAR}, 
+      #{bookAvatar,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR},
+      now(), #{updateBy,jdbcType=VARCHAR}, now()}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.element.hydrogen.entity.book.DonBookInfoEntity" >
+    insert into don_book_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="donBookInfoId != null" >
+        DON_BOOK_INFO_ID,
+      </if>
+      <if test="bookId != null" >
+        BOOK_ID,
+      </if>
+      <if test="isbn != null" >
+        ISBN,
+      </if>
+      <if test="isbnPid != null" >
+        ISBN_PID,
+      </if>
+      <if test="isbnSid != null" >
+        ISBN_SID,
+      </if>
+      <if test="bookName != null" >
+        BOOK_NAME,
+      </if>
+      <if test="bookForeignName != null" >
+        BOOK_FOREIGN_NAME,
+      </if>
+      <if test="author != null" >
+        AUTHOR,
+      </if>
+      <if test="authorForeignName != null" >
+        AUTHOR_FOREIGN_NAME,
+      </if>
+      <if test="authorCountry != null" >
+        AUTHOR_COUNTRY,
+      </if>
+      <if test="translator != null" >
+        TRANSLATOR,
+      </if>
+      <if test="translatorForeignName != null" >
+        TRANSLATOR_FOREIGN_NAME,
+      </if>
+      <if test="editorCharge != null" >
+        EDITOR_CHARGE,
+      </if>
+      <if test="coverDesign != null" >
+        COVER_DESIGN,
+      </if>
+      <if test="collection != null" >
+        COLLECTION,
+      </if>
+      <if test="press != null" >
+        PRESS,
+      </if>
+      <if test="issue != null" >
+        ISSUE,
+      </if>
+      <if test="printHouse != null" >
+        PRINT_HOUSE,
+      </if>
+      <if test="price != null" >
+        PRICE,
+      </if>
+      <if test="currencyType != null" >
+        CURRENCY_TYPE,
+      </if>
+      <if test="editionFirstDate != null" >
+        EDITION_FIRST_DATE,
+      </if>
+      <if test="impressionFirstDate != null" >
+        IMPRESSION_FIRST_DATE,
+      </if>
+      <if test="editionDate != null" >
+        EDITION_DATE,
+      </if>
+      <if test="impressionDate != null" >
+        IMPRESSION_DATE,
+      </if>
+      <if test="edition != null" >
+        EDITION,
+      </if>
+      <if test="impression != null" >
+        IMPRESSION,
+      </if>
+      <if test="sheetsNum != null" >
+        SHEETS_NUM,
+      </if>
+      <if test="bookFormat != null" >
+        BOOK_FORMAT,
+      </if>
+      <if test="wordNum != null" >
+        WORD_NUM,
+      </if>
+      <if test="bookPage != null" >
+        BOOK_PAGE,
+      </if>
+      <if test="printNumStart != null" >
+        PRINT_NUM_START,
+      </if>
+      <if test="printNumEnd != null" >
+        PRINT_NUM_END,
+      </if>
+      <if test="printNum != null" >
+        PRINT_NUM,
+      </if>
+      <if test="language != null" >
+        LANGUAGE,
+      </if>
+      <if test="clc != null" >
+        CLC,
+      </if>
+      <if test="flc != null" >
+        FLC,
+      </if>
+      <if test="bindType != null" >
+        BIND_TYPE,
+      </if>
+      <if test="lwh != null" >
+        LWH,
+      </if>
+      <if test="volume != null" >
+        VOLUME,
+      </if>
+      <if test="weight != null" >
+        WEIGHT,
+      </if>
+      <if test="signFlag != null" >
+        SIGN_FLAG,
+      </if>
+      <if test="signetFlag != null" >
+        SIGNET_FLAG,
+      </if>
+      <if test="bookAvatar != null" >
+        BOOK_AVATAR,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="donBookInfoId != null" >
+        #{donBookInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="bookId != null" >
+        #{bookId,jdbcType=VARCHAR},
+      </if>
+      <if test="isbn != null" >
+        #{isbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isbnPid != null" >
+        #{isbnPid,jdbcType=VARCHAR},
+      </if>
+      <if test="isbnSid != null" >
+        #{isbnSid,jdbcType=VARCHAR},
+      </if>
+      <if test="bookName != null" >
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookForeignName != null" >
+        #{bookForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorForeignName != null" >
+        #{authorForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorCountry != null" >
+        #{authorCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="translator != null" >
+        #{translator,jdbcType=VARCHAR},
+      </if>
+      <if test="translatorForeignName != null" >
+        #{translatorForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="editorCharge != null" >
+        #{editorCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="coverDesign != null" >
+        #{coverDesign,jdbcType=VARCHAR},
+      </if>
+      <if test="collection != null" >
+        #{collection,jdbcType=VARCHAR},
+      </if>
+      <if test="press != null" >
+        #{press,jdbcType=VARCHAR},
+      </if>
+      <if test="issue != null" >
+        #{issue,jdbcType=VARCHAR},
+      </if>
+      <if test="printHouse != null" >
+        #{printHouse,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="currencyType != null" >
+        #{currencyType,jdbcType=VARCHAR},
+      </if>
+      <if test="editionFirstDate != null" >
+        #{editionFirstDate,jdbcType=VARCHAR},
+      </if>
+      <if test="impressionFirstDate != null" >
+        #{impressionFirstDate,jdbcType=VARCHAR},
+      </if>
+      <if test="editionDate != null" >
+        #{editionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="impressionDate != null" >
+        #{impressionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="edition != null" >
+        #{edition,jdbcType=VARCHAR},
+      </if>
+      <if test="impression != null" >
+        #{impression,jdbcType=VARCHAR},
+      </if>
+      <if test="sheetsNum != null" >
+        #{sheetsNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bookFormat != null" >
+        #{bookFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="wordNum != null" >
+        #{wordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bookPage != null" >
+        #{bookPage,jdbcType=VARCHAR},
+      </if>
+      <if test="printNumStart != null" >
+        #{printNumStart,jdbcType=VARCHAR},
+      </if>
+      <if test="printNumEnd != null" >
+        #{printNumEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="printNum != null" >
+        #{printNum,jdbcType=VARCHAR},
+      </if>
+      <if test="language != null" >
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="clc != null" >
+        #{clc,jdbcType=VARCHAR},
+      </if>
+      <if test="flc != null" >
+        #{flc,jdbcType=VARCHAR},
+      </if>
+      <if test="bindType != null" >
+        #{bindType,jdbcType=VARCHAR},
+      </if>
+      <if test="lwh != null" >
+        #{lwh,jdbcType=VARCHAR},
+      </if>
+      <if test="volume != null" >
+        #{volume,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="signFlag != null" >
+        #{signFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="signetFlag != null" >
+        #{signetFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="bookAvatar != null" >
+        #{bookAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.book.DonBookInfoEntity" >
+    update don_book_info
+    <set >
+      <if test="bookId != null" >
+        BOOK_ID = #{bookId,jdbcType=VARCHAR},
+      </if>
+      <if test="isbn != null" >
+        ISBN = #{isbn,jdbcType=VARCHAR},
+      </if>
+      <if test="isbnPid != null" >
+        ISBN_PID = #{isbnPid,jdbcType=VARCHAR},
+      </if>
+      <if test="isbnSid != null" >
+        ISBN_SID = #{isbnSid,jdbcType=VARCHAR},
+      </if>
+      <if test="bookName != null" >
+        BOOK_NAME = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookForeignName != null" >
+        BOOK_FOREIGN_NAME = #{bookForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        AUTHOR = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorForeignName != null" >
+        AUTHOR_FOREIGN_NAME = #{authorForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="authorCountry != null" >
+        AUTHOR_COUNTRY = #{authorCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="translator != null" >
+        TRANSLATOR = #{translator,jdbcType=VARCHAR},
+      </if>
+      <if test="translatorForeignName != null" >
+        TRANSLATOR_FOREIGN_NAME = #{translatorForeignName,jdbcType=VARCHAR},
+      </if>
+      <if test="editorCharge != null" >
+        EDITOR_CHARGE = #{editorCharge,jdbcType=VARCHAR},
+      </if>
+      <if test="coverDesign != null" >
+        COVER_DESIGN = #{coverDesign,jdbcType=VARCHAR},
+      </if>
+      <if test="collection != null" >
+        COLLECTION = #{collection,jdbcType=VARCHAR},
+      </if>
+      <if test="press != null" >
+        PRESS = #{press,jdbcType=VARCHAR},
+      </if>
+      <if test="issue != null" >
+        ISSUE = #{issue,jdbcType=VARCHAR},
+      </if>
+      <if test="printHouse != null" >
+        PRINT_HOUSE = #{printHouse,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        PRICE = #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="currencyType != null" >
+        CURRENCY_TYPE = #{currencyType,jdbcType=VARCHAR},
+      </if>
+      <if test="editionFirstDate != null" >
+        EDITION_FIRST_DATE = #{editionFirstDate,jdbcType=VARCHAR},
+      </if>
+      <if test="impressionFirstDate != null" >
+        IMPRESSION_FIRST_DATE = #{impressionFirstDate,jdbcType=VARCHAR},
+      </if>
+      <if test="editionDate != null" >
+        EDITION_DATE = #{editionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="impressionDate != null" >
+        IMPRESSION_DATE = #{impressionDate,jdbcType=VARCHAR},
+      </if>
+      <if test="edition != null" >
+        EDITION = #{edition,jdbcType=VARCHAR},
+      </if>
+      <if test="impression != null" >
+        IMPRESSION = #{impression,jdbcType=VARCHAR},
+      </if>
+      <if test="sheetsNum != null" >
+        SHEETS_NUM = #{sheetsNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bookFormat != null" >
+        BOOK_FORMAT = #{bookFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="wordNum != null" >
+        WORD_NUM = #{wordNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bookPage != null" >
+        BOOK_PAGE = #{bookPage,jdbcType=VARCHAR},
+      </if>
+      <if test="printNumStart != null" >
+        PRINT_NUM_START = #{printNumStart,jdbcType=VARCHAR},
+      </if>
+      <if test="printNumEnd != null" >
+        PRINT_NUM_END = #{printNumEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="printNum != null" >
+        PRINT_NUM = #{printNum,jdbcType=VARCHAR},
+      </if>
+      <if test="language != null" >
+        LANGUAGE = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="clc != null" >
+        CLC = #{clc,jdbcType=VARCHAR},
+      </if>
+      <if test="flc != null" >
+        FLC = #{flc,jdbcType=VARCHAR},
+      </if>
+      <if test="bindType != null" >
+        BIND_TYPE = #{bindType,jdbcType=VARCHAR},
+      </if>
+      <if test="lwh != null" >
+        LWH = #{lwh,jdbcType=VARCHAR},
+      </if>
+      <if test="volume != null" >
+        VOLUME = #{volume,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        WEIGHT = #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="signFlag != null" >
+        SIGN_FLAG = #{signFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="signetFlag != null" >
+        SIGNET_FLAG = #{signetFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="bookAvatar != null" >
+        BOOK_AVATAR = #{bookAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    where DON_BOOK_INFO_ID = #{donBookInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.book.DonBookInfoEntity" >
+    update don_book_info
+    set BOOK_ID = #{bookId,jdbcType=VARCHAR},
+      ISBN = #{isbn,jdbcType=VARCHAR},
+      ISBN_PID = #{isbnPid,jdbcType=VARCHAR},
+      ISBN_SID = #{isbnSid,jdbcType=VARCHAR},
+      BOOK_NAME = #{bookName,jdbcType=VARCHAR},
+      BOOK_FOREIGN_NAME = #{bookForeignName,jdbcType=VARCHAR},
+      AUTHOR = #{author,jdbcType=VARCHAR},
+      AUTHOR_FOREIGN_NAME = #{authorForeignName,jdbcType=VARCHAR},
+      AUTHOR_COUNTRY = #{authorCountry,jdbcType=VARCHAR},
+      TRANSLATOR = #{translator,jdbcType=VARCHAR},
+      TRANSLATOR_FOREIGN_NAME = #{translatorForeignName,jdbcType=VARCHAR},
+      EDITOR_CHARGE = #{editorCharge,jdbcType=VARCHAR},
+      COVER_DESIGN = #{coverDesign,jdbcType=VARCHAR},
+      COLLECTION = #{collection,jdbcType=VARCHAR},
+      PRESS = #{press,jdbcType=VARCHAR},
+      ISSUE = #{issue,jdbcType=VARCHAR},
+      PRINT_HOUSE = #{printHouse,jdbcType=VARCHAR},
+      PRICE = #{price,jdbcType=VARCHAR},
+      CURRENCY_TYPE = #{currencyType,jdbcType=VARCHAR},
+      EDITION_FIRST_DATE = #{editionFirstDate,jdbcType=VARCHAR},
+      IMPRESSION_FIRST_DATE = #{impressionFirstDate,jdbcType=VARCHAR},
+      EDITION_DATE = #{editionDate,jdbcType=VARCHAR},
+      IMPRESSION_DATE = #{impressionDate,jdbcType=VARCHAR},
+      EDITION = #{edition,jdbcType=VARCHAR},
+      IMPRESSION = #{impression,jdbcType=VARCHAR},
+      SHEETS_NUM = #{sheetsNum,jdbcType=VARCHAR},
+      BOOK_FORMAT = #{bookFormat,jdbcType=VARCHAR},
+      WORD_NUM = #{wordNum,jdbcType=VARCHAR},
+      BOOK_PAGE = #{bookPage,jdbcType=VARCHAR},
+      PRINT_NUM_START = #{printNumStart,jdbcType=VARCHAR},
+      PRINT_NUM_END = #{printNumEnd,jdbcType=VARCHAR},
+      PRINT_NUM = #{printNum,jdbcType=VARCHAR},
+      LANGUAGE = #{language,jdbcType=VARCHAR},
+      CLC = #{clc,jdbcType=VARCHAR},
+      FLC = #{flc,jdbcType=VARCHAR},
+      BIND_TYPE = #{bindType,jdbcType=VARCHAR},
+      LWH = #{lwh,jdbcType=VARCHAR},
+      VOLUME = #{volume,jdbcType=VARCHAR},
+      WEIGHT = #{weight,jdbcType=VARCHAR},
+      SIGN_FLAG = #{signFlag,jdbcType=VARCHAR},
+      SIGNET_FLAG = #{signetFlag,jdbcType=VARCHAR},
+      BOOK_AVATAR = #{bookAvatar,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = now()
+    where DON_BOOK_INFO_ID = #{donBookInfoId,jdbcType=VARCHAR}
+  </update>
+
+  <!--分页查询-->
+  <select id="query" parameterType="com.element.hydrogen.entity.book.DonBookInfoEntity" resultMap="BaseResultMap">
+    select
+      DON_BOOK_INFO_ID, BOOK_ID, ISBN,
+    ISBN_PID, ISBN_SID, BOOK_NAME,
+    BOOK_FOREIGN_NAME, AUTHOR, AUTHOR_FOREIGN_NAME,
+    AUTHOR_COUNTRY, TRANSLATOR, TRANSLATOR_FOREIGN_NAME,
+    EDITOR_CHARGE, COVER_DESIGN, COLLECTION,
+    PRESS, ISSUE, PRINT_HOUSE,
+    PRICE, CURRENCY_TYPE, EDITION_FIRST_DATE,
+    IMPRESSION_FIRST_DATE, EDITION_DATE, IMPRESSION_DATE,
+    EDITION, IMPRESSION, SHEETS_NUM,
+    BOOK_FORMAT, WORD_NUM, BOOK_PAGE,
+    PRINT_NUM_START, PRINT_NUM_END, PRINT_NUM,
+    LANGUAGE, CLC, FLC,
+    BIND_TYPE, LWH, VOLUME,
+    WEIGHT, SIGN_FLAG, SIGNET_FLAG,
+    BOOK_AVATAR, REMARK
+    from don_book_info a
+    where 1=1
+    <if test="queryName != null and queryName != ''">
+      and (BOOK_ID = #{queryName,jdbcType=VARCHAR}
+      or ISBN= #{queryName,jdbcType=VARCHAR}
+      or BOOK_NAME= #{queryName,jdbcType=VARCHAR}
+      )
+    </if>
+  </select>
+</mapper>

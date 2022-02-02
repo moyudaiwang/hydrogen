@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.element.hydrogen.mapper.monitor.DonLogInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.element.hydrogen.entity.monitor.DonLogInfoEntity" >
+    <id column="DON_LOG_INFO_ID" property="donLogInfoId" jdbcType="VARCHAR" />
+    <result column="LOG_ID" property="logId" jdbcType="VARCHAR" />
+    <result column="IP" property="ip" jdbcType="VARCHAR" />
+    <result column="ROLE_ID" property="roleId" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="ROLE_NAME" property="roleName" jdbcType="VARCHAR" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="OPERATE_TYPE" property="operateType" jdbcType="VARCHAR" />
+    <result column="OPERATE_DATE" property="operateDate" jdbcType="DATE" />
+    <result column="FIRST_MODULE" property="firstModule" jdbcType="VARCHAR" />
+    <result column="SECOND_MODULE" property="secondModule" jdbcType="VARCHAR" />
+    <result column="THIRD_MODULE" property="thirdModule" jdbcType="VARCHAR" />
+    <result column="USE_POINT" property="usePoint" jdbcType="VARCHAR" />
+    <result column="OPERATE_RESULT" property="operateResult" jdbcType="VARCHAR" />
+    <result column="EVENT_SCENE" property="eventScene" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="DATE" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DON_LOG_INFO_ID, LOG_ID, IP, ROLE_ID, USER_ID, ROLE_NAME, USER_NAME, OPERATE_TYPE, 
+    OPERATE_DATE, FIRST_MODULE, SECOND_MODULE, THIRD_MODULE, USE_POINT, OPERATE_RESULT, 
+    EVENT_SCENE, REMARK, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from don_log_info
+    where DON_LOG_INFO_ID = #{donLogInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from don_log_info
+    where DON_LOG_INFO_ID = #{donLogInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.element.hydrogen.entity.monitor.DonLogInfoEntity" >
+    insert into don_log_info (DON_LOG_INFO_ID, LOG_ID, IP, 
+      ROLE_ID, USER_ID, ROLE_NAME, 
+      USER_NAME, OPERATE_TYPE, OPERATE_DATE, 
+      FIRST_MODULE, SECOND_MODULE, THIRD_MODULE, 
+      USE_POINT, OPERATE_RESULT, EVENT_SCENE, 
+      REMARK, CREATE_BY, CREATE_DATE, 
+      UPDATE_BY, UPDATE_DATE)
+    values (REPLACE(UUID(),"-",""), REPLACE(UUID(),"-",""), #{ip,jdbcType=VARCHAR},
+      #{roleId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, 
+      #{userName,jdbcType=VARCHAR}, #{operateType,jdbcType=VARCHAR}, #{operateDate,jdbcType=DATE}, 
+      #{firstModule,jdbcType=VARCHAR}, #{secondModule,jdbcType=VARCHAR}, #{thirdModule,jdbcType=VARCHAR}, 
+      #{usePoint,jdbcType=VARCHAR}, #{operateResult,jdbcType=VARCHAR}, #{eventScene,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR},now(),
+      #{updateBy,jdbcType=VARCHAR}, now())
+  </insert>
+  <insert id="insertSelective" parameterType="com.element.hydrogen.entity.monitor.DonLogInfoEntity" >
+    insert into don_log_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="donLogInfoId != null" >
+        DON_LOG_INFO_ID,
+      </if>
+      <if test="logId != null" >
+        LOG_ID,
+      </if>
+      <if test="ip != null" >
+        IP,
+      </if>
+      <if test="roleId != null" >
+        ROLE_ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="roleName != null" >
+        ROLE_NAME,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="operateType != null" >
+        OPERATE_TYPE,
+      </if>
+      <if test="operateDate != null" >
+        OPERATE_DATE,
+      </if>
+      <if test="firstModule != null" >
+        FIRST_MODULE,
+      </if>
+      <if test="secondModule != null" >
+        SECOND_MODULE,
+      </if>
+      <if test="thirdModule != null" >
+        THIRD_MODULE,
+      </if>
+      <if test="usePoint != null" >
+        USE_POINT,
+      </if>
+      <if test="operateResult != null" >
+        OPERATE_RESULT,
+      </if>
+      <if test="eventScene != null" >
+        EVENT_SCENE,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="donLogInfoId != null" >
+        #{donLogInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="logId != null" >
+        #{logId,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        #{roleId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="roleName != null" >
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="operateType != null" >
+        #{operateType,jdbcType=VARCHAR},
+      </if>
+      <if test="operateDate != null" >
+        #{operateDate,jdbcType=DATE},
+      </if>
+      <if test="firstModule != null" >
+        #{firstModule,jdbcType=VARCHAR},
+      </if>
+      <if test="secondModule != null" >
+        #{secondModule,jdbcType=VARCHAR},
+      </if>
+      <if test="thirdModule != null" >
+        #{thirdModule,jdbcType=VARCHAR},
+      </if>
+      <if test="usePoint != null" >
+        #{usePoint,jdbcType=VARCHAR},
+      </if>
+      <if test="operateResult != null" >
+        #{operateResult,jdbcType=VARCHAR},
+      </if>
+      <if test="eventScene != null" >
+        #{eventScene,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.monitor.DonLogInfoEntity" >
+    update don_log_info
+    <set >
+      <if test="logId != null" >
+        LOG_ID = #{logId,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        IP = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        ROLE_ID = #{roleId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="roleName != null" >
+        ROLE_NAME = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="operateType != null" >
+        OPERATE_TYPE = #{operateType,jdbcType=VARCHAR},
+      </if>
+      <if test="operateDate != null" >
+        OPERATE_DATE = #{operateDate,jdbcType=DATE},
+      </if>
+      <if test="firstModule != null" >
+        FIRST_MODULE = #{firstModule,jdbcType=VARCHAR},
+      </if>
+      <if test="secondModule != null" >
+        SECOND_MODULE = #{secondModule,jdbcType=VARCHAR},
+      </if>
+      <if test="thirdModule != null" >
+        THIRD_MODULE = #{thirdModule,jdbcType=VARCHAR},
+      </if>
+      <if test="usePoint != null" >
+        USE_POINT = #{usePoint,jdbcType=VARCHAR},
+      </if>
+      <if test="operateResult != null" >
+        OPERATE_RESULT = #{operateResult,jdbcType=VARCHAR},
+      </if>
+      <if test="eventScene != null" >
+        EVENT_SCENE = #{eventScene,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    where DON_LOG_INFO_ID = #{donLogInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.monitor.DonLogInfoEntity" >
+    update don_log_info
+    set LOG_ID = #{logId,jdbcType=VARCHAR},
+      IP = #{ip,jdbcType=VARCHAR},
+      ROLE_ID = #{roleId,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=VARCHAR},
+      ROLE_NAME = #{roleName,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      OPERATE_TYPE = #{operateType,jdbcType=VARCHAR},
+      OPERATE_DATE = #{operateDate,jdbcType=DATE},
+      FIRST_MODULE = #{firstModule,jdbcType=VARCHAR},
+      SECOND_MODULE = #{secondModule,jdbcType=VARCHAR},
+      THIRD_MODULE = #{thirdModule,jdbcType=VARCHAR},
+      USE_POINT = #{usePoint,jdbcType=VARCHAR},
+      OPERATE_RESULT = #{operateResult,jdbcType=VARCHAR},
+      EVENT_SCENE = #{eventScene,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=DATE},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = #{updateDate,jdbcType=DATE}
+    where DON_LOG_INFO_ID = #{donLogInfoId,jdbcType=VARCHAR}
+  </update>
+
+  <!--分页查询-->
+  <select id="query" parameterType="com.element.hydrogen.entity.monitor.DonLogInfoEntity" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List" />
+    from don_log_info a
+    where 1=1
+    <if test="queryName != null and queryName != ''">
+      and (LOG_ID = #{queryName,jdbcType=VARCHAR}
+      or ROLE_NAME = #{queryName,jdbcType=VARCHAR}
+      or USER_NAME = #{queryName,jdbcType=VARCHAR}
+      )
+    </if>
+  </select>
+
+</mapper>

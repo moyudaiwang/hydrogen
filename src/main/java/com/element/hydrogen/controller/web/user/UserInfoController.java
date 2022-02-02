@@ -1,21 +1,20 @@
 package com.element.hydrogen.controller.web.user;
 
+import cn.hutool.http.server.HttpServerRequest;
+import com.element.hydrogen.constant.common.ResponseJsonConstant;
 import com.element.hydrogen.entity.common.ResponseJson;
-import com.element.hydrogen.entity.user.UserInfoEntity;
+import com.element.hydrogen.entity.user.DonUserInfoEntity;
 import com.element.hydrogen.service.user.UserInfoService;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @ClassName UserInfoController
- * @Description 用户管理
+ * @Description 用户信息
  * @Author yanyu
- * @Date 2020/8/30 0:07
+ * @Date 2022-02-03 03:31:50
  * @Version 1.0
  */
 @RestController
@@ -25,97 +24,51 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
+    public static ResponseJsonConstant res;
+
     @CrossOrigin
-    @RequestMapping(value = "/getUserInfo/{userName}",method = RequestMethod.GET)
-    public UserInfoEntity getUserInfo(@PathVariable String userName){
-        UserInfoEntity userInfoEntity= new UserInfoEntity();
-        String donUserInfoId ="AA9E9C4914024736B9113F07B82C06CD";
-        userInfoEntity =userInfoService.selectByPrimaryKey(donUserInfoId);
-        return userInfoEntity;
+    @RequestMapping(value = "/query",method = RequestMethod.POST)
+    public ResponseJson query(@RequestBody DonUserInfoEntity donUserInfoEntity){
+        return userInfoService.query(donUserInfoEntity);
     }
 
-    /**
-     * 查询用户列表
-     * @param userInfoEntity
-     * @return
-     */
     @CrossOrigin
-    @RequestMapping(value = "/queryUserInfoAll",method = RequestMethod.POST)
-    public List<UserInfoEntity> queryUserInfoAll(@RequestBody UserInfoEntity userInfoEntity){
-        List<UserInfoEntity> userInfoEntityList =new ArrayList<>();
-        userInfoEntityList =userInfoService.queryUserInfoAll(userInfoEntity);
-        return userInfoEntityList;
-    }
-
-    /**
-     * 分页查询用户列表
-     * @param userInfoEntity
-     * @return
-     */
-    @CrossOrigin
-    @RequestMapping(value = "/queryUserInfoPage",method = RequestMethod.POST)
-    public PageInfo<UserInfoEntity> queryUserInfoPage(@RequestBody UserInfoEntity userInfoEntity){
-        PageInfo<UserInfoEntity> pageInfo = new PageInfo<UserInfoEntity>();
-        System.out.println(userInfoEntity.getUserName());
-        PageHelper.startPage(userInfoEntity.getPageNum(), userInfoEntity.getPageSize());
-        pageInfo =userInfoService.queryUserInfoPage(userInfoEntity);
-        return pageInfo;
-    }
-
-    /**
-     * 新增用户信息
-     * @param userInfoEntity
-     * @return
-     */
-    @CrossOrigin
-    @RequestMapping(value = "/insertUserInfo",method = RequestMethod.POST)
-    public ResponseJson insertUserInfo(@RequestBody UserInfoEntity userInfoEntity){
+    @RequestMapping(value = "/insert",method = RequestMethod.POST)
+    public ResponseJson insert(HttpServerRequest request, @RequestBody DonUserInfoEntity donUserInfoEntity){
         ResponseJson resJson = new ResponseJson();
-        userInfoEntity.setOperator("molecule");
+        donUserInfoEntity.setOperator("molecule");
         try{
-            resJson =userInfoService.insertUserInfo(userInfoEntity);
+            resJson =userInfoService.insert(donUserInfoEntity);
         }catch (Exception e){
-            resJson.setCode("500");
-            resJson.setStatus("false");
-            resJson.setMsg("新增失败");
+            resJson.setCode(res.FAIL);
+            resJson.setMsg(res.FAIL_ADD);
         }
         return resJson;
     }
-    /**
-     * 修改用户信息
-     * @param userInfoEntity
-     * @return
-     */
+
     @CrossOrigin
-    @RequestMapping(value = "/updateUserInfo",method = RequestMethod.POST)
-    public ResponseJson updateUserInfo(@RequestBody UserInfoEntity userInfoEntity){
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public ResponseJson update(HttpServerRequest request,@RequestBody DonUserInfoEntity donUserInfoEntity){
         ResponseJson resJson = new ResponseJson();
-        userInfoEntity.setOperator("molecule");
+        donUserInfoEntity.setOperator("molecule");
         try{
-            resJson =userInfoService.updateUserInfo(userInfoEntity);
+            resJson =userInfoService.update(donUserInfoEntity);
         }catch (Exception e){
-            resJson.setCode("500");
-            resJson.setStatus("false");
-            resJson.setMsg("修改失败");
+            resJson.setCode(res.FAIL);
+            resJson.setMsg(res.FAIL_UPD);
         }
         return resJson;
     }
-    /**
-     * 删除用户信息
-     * @param userInfoEntity
-     * @return
-     */
+
     @CrossOrigin
-    @RequestMapping(value = "/deleteUserInfo",method = RequestMethod.POST)
-    public ResponseJson deleteUserInfo(@RequestBody UserInfoEntity userInfoEntity){
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    public ResponseJson delete(@RequestBody List<DonUserInfoEntity> donUserInfoEntityList){
         ResponseJson resJson = new ResponseJson();
-        userInfoEntity.setOperator("molecule");
         try{
-            resJson =userInfoService.deleteUserInfo(userInfoEntity);
+            resJson =userInfoService.delete(donUserInfoEntityList);
         }catch (Exception e){
-            resJson.setCode("500");
-            resJson.setStatus("false");
-            resJson.setMsg("删除失败");
+            resJson.setCode(res.FAIL);
+            resJson.setMsg(res.FAIL_DEL);
         }
         return resJson;
     }
