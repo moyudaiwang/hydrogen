@@ -1,7 +1,7 @@
 package com.element.hydrogen.controller.web.user;
 
+import com.element.hydrogen.entity.auth.DonAccountInfoEntity;
 import com.element.hydrogen.entity.common.ResponseJson;
-import com.element.hydrogen.entity.user.AccountCodeEntity;
 import com.element.hydrogen.service.user.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,11 +22,10 @@ public class LoginController {
 
     @CrossOrigin
     @RequestMapping(value = "/check",method = RequestMethod.POST)
-    public ResponseJson check(@RequestBody AccountCodeEntity accountCodeEntity){
+    public ResponseJson check(@RequestBody DonAccountInfoEntity donAccountInfoEntity){
         ResponseJson responseJson= new ResponseJson();
-        responseJson =loginService.check(accountCodeEntity);
+        responseJson = loginService.check(donAccountInfoEntity);
         return responseJson;
     }
-
 
 }
