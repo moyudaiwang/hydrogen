@@ -1,6 +1,4 @@
-import com.element.hydrogen.entity.user.UserInfoEntity;
 import com.element.hydrogen.service.user.UserInfoService;
-import com.github.pagehelper.PageInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +24,8 @@ public class Test_1{
 
     @Test
     public void setpageInfo(){
-        UserInfoEntity userInfoEntity =new UserInfoEntity();
-        userInfoEntity.setUserName("綦智");
+        //UserInfoEntity userInfoEntity =new UserInfoEntity();
+        //userInfoEntity.setUserName("綦智");
         //userInfoEntity.setNickname();
        // PageInfo<UserInfoEntity> pageInfo  = userInfoService.queryUserInfoPage(userInfoEntity);
       //  System.out.println("publicpublicpublic"+pageInfo.toString());
