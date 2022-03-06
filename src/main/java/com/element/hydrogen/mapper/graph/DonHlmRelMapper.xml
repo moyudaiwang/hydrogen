@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.element.hydrogen.mapper.graph.DonHlmRelMapper" >
+  <resultMap id="BaseResultMap" type="com.element.hydrogen.entity.graph.DonHlmRelEntity" >
+    <id column="DON_HLM_REL_ID" property="donHlmRelId" jdbcType="VARCHAR" />
+    <result column="REL_ID" property="relId" jdbcType="VARCHAR" />
+    <result column="FROM_ID" property="fromId" jdbcType="VARCHAR" />
+    <result column="TO_ID" property="toId" jdbcType="VARCHAR" />
+    <result column="REL_NAME" property="relName" jdbcType="VARCHAR" />
+    <result column="REL_TYPE" property="relType" jdbcType="VARCHAR" />
+    <result column="REL_LEVEL" property="relLevel" jdbcType="VARCHAR" />
+    <result column="REL_STATUS" property="relStatus" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="DATE" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DON_HLM_REL_ID, REL_ID, FROM_ID, TO_ID, REL_NAME, REL_TYPE, REL_LEVEL, REL_STATUS, 
+    REMARK, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from don_hlm_rel
+    where DON_HLM_REL_ID = #{donHlmRelId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from don_hlm_rel
+    where DON_HLM_REL_ID = #{donHlmRelId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.element.hydrogen.entity.graph.DonHlmRelEntity" >
+    insert into don_hlm_rel (DON_HLM_REL_ID, REL_ID, FROM_ID, 
+      TO_ID, REL_NAME, REL_TYPE, 
+      REL_LEVEL, REL_STATUS, REMARK, 
+      CREATE_BY, CREATE_DATE, UPDATE_BY, 
+      UPDATE_DATE)
+    values (#{donHlmRelId,jdbcType=VARCHAR}, #{relId,jdbcType=VARCHAR}, #{fromId,jdbcType=VARCHAR}, 
+      #{toId,jdbcType=VARCHAR}, #{relName,jdbcType=VARCHAR}, #{relType,jdbcType=VARCHAR}, 
+      #{relLevel,jdbcType=VARCHAR}, #{relStatus,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.element.hydrogen.entity.graph.DonHlmRelEntity" >
+    insert into don_hlm_rel
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="donHlmRelId != null" >
+        DON_HLM_REL_ID,
+      </if>
+      <if test="relId != null" >
+        REL_ID,
+      </if>
+      <if test="fromId != null" >
+        FROM_ID,
+      </if>
+      <if test="toId != null" >
+        TO_ID,
+      </if>
+      <if test="relName != null" >
+        REL_NAME,
+      </if>
+      <if test="relType != null" >
+        REL_TYPE,
+      </if>
+      <if test="relLevel != null" >
+        REL_LEVEL,
+      </if>
+      <if test="relStatus != null" >
+        REL_STATUS,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="donHlmRelId != null" >
+        #{donHlmRelId,jdbcType=VARCHAR},
+      </if>
+      <if test="relId != null" >
+        #{relId,jdbcType=VARCHAR},
+      </if>
+      <if test="fromId != null" >
+        #{fromId,jdbcType=VARCHAR},
+      </if>
+      <if test="toId != null" >
+        #{toId,jdbcType=VARCHAR},
+      </if>
+      <if test="relName != null" >
+        #{relName,jdbcType=VARCHAR},
+      </if>
+      <if test="relType != null" >
+        #{relType,jdbcType=VARCHAR},
+      </if>
+      <if test="relLevel != null" >
+        #{relLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="relStatus != null" >
+        #{relStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.graph.DonHlmRelEntity" >
+    update don_hlm_rel
+    <set >
+      <if test="relId != null" >
+        REL_ID = #{relId,jdbcType=VARCHAR},
+      </if>
+      <if test="fromId != null" >
+        FROM_ID = #{fromId,jdbcType=VARCHAR},
+      </if>
+      <if test="toId != null" >
+        TO_ID = #{toId,jdbcType=VARCHAR},
+      </if>
+      <if test="relName != null" >
+        REL_NAME = #{relName,jdbcType=VARCHAR},
+      </if>
+      <if test="relType != null" >
+        REL_TYPE = #{relType,jdbcType=VARCHAR},
+      </if>
+      <if test="relLevel != null" >
+        REL_LEVEL = #{relLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="relStatus != null" >
+        REL_STATUS = #{relStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    where DON_HLM_REL_ID = #{donHlmRelId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.graph.DonHlmRelEntity" >
+    update don_hlm_rel
+    set REL_ID = #{relId,jdbcType=VARCHAR},
+      FROM_ID = #{fromId,jdbcType=VARCHAR},
+      TO_ID = #{toId,jdbcType=VARCHAR},
+      REL_NAME = #{relName,jdbcType=VARCHAR},
+      REL_TYPE = #{relType,jdbcType=VARCHAR},
+      REL_LEVEL = #{relLevel,jdbcType=VARCHAR},
+      REL_STATUS = #{relStatus,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=DATE},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = #{updateDate,jdbcType=DATE}
+    where DON_HLM_REL_ID = #{donHlmRelId,jdbcType=VARCHAR}
+  </update>
+
+  <!--分页查询-->
+  <select id="query" parameterType="com.element.hydrogen.entity.graph.DonHlmRelEntity" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from don_hlm_rel a
+    where 1=1
+    <if test="queryName != null and queryName != ''">
+      and (REL_NAME = #{queryName,jdbcType=VARCHAR}
+      or REL_TYPE= #{queryName,jdbcType=VARCHAR}
+      or REL_LEVEL= #{queryName,jdbcType=VARCHAR}
+      )
+    </if>
+  </select>
+</mapper>
