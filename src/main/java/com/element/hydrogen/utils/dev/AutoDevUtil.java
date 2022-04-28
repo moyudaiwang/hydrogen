@@ -22,15 +22,15 @@ public class AutoDevUtil {
 
         //配置项
         String oldBase = "donLogInfo";  //donOld    --源名称（每次需要修改）
-        String newBase = "donUserInfo"; //donNew ----目标名称（每次需要修改）
-        String newModelNameBase = "用户信息"; //donNew ----目标名称（每次需要修改）
+        String newBase = "donHlmRel"; //donNew ----目标名称（每次需要修改）
+        String newModelNameBase = "红楼梦人物关系"; //donNew ----目标名称（每次需要修改）
 
         //两个字符串数组用于vue展示字段
-        String[] ids = "userId,userName,nickname,userForeignName,sex,birthday,phoneNo,email,address,avatar,userStatus,remark".split(","); //用于vue
-        String[] names = "用户ID,用户名,昵称,外文名,性别,出生日期,手机号,电子邮箱,地址,头像,用户状态,备注".split(",");  //用于vue
+        String[] ids = "relId,fromId,toId,relName,relType,relLevel,relStatus,remark".split(","); //用于vue
+        String[] names = "关系ID,FROM_ID,TO_ID,关系名,关系类型,关系等级,关系状态,备注".split(",");  //用于vue
 
         //模块目录配置
-        String new_Model = "user";
+        String new_Model = "graph";
         String serviceImport_Old = "com.element.hydrogen.service.monitor"; //一般不修改
         String serviceImport_New = "com.element.hydrogen.service."+new_Model; //新模块路径（根据需要修改）
         String entityImport_Old = "com.element.hydrogen.entity.monitor"; //一般不修改
