@@ -11,5 +11,9 @@ import com.element.hydrogen.entity.common.ResponseJson;
  * @Version 1.0
  */
 public interface LoginService {
-    ResponseJson check(DonAccountInfoEntity donAccountInfoEntity);
+    ResponseJson login(DonAccountInfoEntity donAccountInfoEntity);
+
+    ResponseJson receiveCode(DonAccountInfoEntity donAccountInfoEntity);
+
+    ResponseJson register(DonAccountInfoEntity param);
 }

@@ -32,8 +32,20 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--生成对应表及类名-->
-        <table tableName="DON_HLM_INFO" domainObjectName="DonHlmInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="DON_HLM_REL" domainObjectName="DonHlmRel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+       <table tableName="DON_WLXF_MAP" domainObjectName="DonWlxfMap" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <!--
+                <table tableName="T_HR_BOARD_TABLE_INFO" domainObjectName="BoardTableInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+                <table tableName="T_HR_BOARD_TABLE_OPERATION_INFO" domainObjectName="BoardTableOperationInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+                <table tableName="T_HR_WORK_MAPPING" domainObjectName="WorkMapping" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+                <table tableName="T_HR_WORK_MAPPING_ATTACH" domainObjectName="WorkMappingAttach" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+                <table tableName="T_HR_ORG_RELEVANCE" domainObjectName="OrgRelevance" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+                <table tableName="T_HR_EMPLOY_PROCESS" domainObjectName="EmployProcess" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+                <table tableName="T_HR_EMPLOY_MERITS" domainObjectName="EmployMerits" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+                <table tableName="T_HR_ORG_TARGET" domainObjectName="OrgTarget" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+                <table tableName="T_HR_HEADQUARTER_TARGET" domainObjectName="HeadquarterTarget" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        -->
 
     </context>
 </generatorConfiguration>

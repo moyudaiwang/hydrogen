@@ -25,15 +25,13 @@ public class MenuInfoServiceImpl implements MenuInfoService {
     @Autowired
     public DonMenuInfoMapper donMenuInfoMapper;
 
-    public static ResponseJsonConstant res;
-
     @Override
     public ResponseJson query(DonMenuInfoEntity donMenuInfoEntity) {
         ResponseJson resJson = new ResponseJson();
         PageHelper.startPage(donMenuInfoEntity.getPageNum(), donMenuInfoEntity.getPageSize());
         List<DonMenuInfoEntity> donMenuInfoEntityList = donMenuInfoMapper.query(donMenuInfoEntity);
         PageInfo<DonMenuInfoEntity> pageInfo = new PageInfo<DonMenuInfoEntity>(donMenuInfoEntityList);
-        resJson.setCode(res.SUCCESS);
+        resJson.setCode(ResponseJsonConstant.SUCCESS);
         resJson.setObject(pageInfo);
         return resJson;
     }
@@ -43,11 +41,11 @@ public class MenuInfoServiceImpl implements MenuInfoService {
         ResponseJson resJson = new ResponseJson();
         try {
             donMenuInfoMapper.insert(donMenuInfoEntity);
-            resJson.setCode(res.SUCCESS);
-            resJson.setMsg(res.SUC_ADD);
+            resJson.setCode(ResponseJsonConstant.SUCCESS);
+            resJson.setMsg(ResponseJsonConstant.SUC_ADD);
         } catch (Exception e) {
-            resJson.setCode(res.FAIL);
-            resJson.setMsg(res.FAIL_ADD);
+            resJson.setCode(ResponseJsonConstant.FAIL);
+            resJson.setMsg(ResponseJsonConstant.FAIL_ADD);
         }
         return resJson;
     }
@@ -57,11 +55,11 @@ public class MenuInfoServiceImpl implements MenuInfoService {
         ResponseJson resJson = new ResponseJson();
         try {
             donMenuInfoMapper.updateByPrimaryKey(donMenuInfoEntity);
-            resJson.setCode(res.SUCCESS);
-            resJson.setMsg(res.SUC_UPD);
+            resJson.setCode(ResponseJsonConstant.SUCCESS);
+            resJson.setMsg(ResponseJsonConstant.SUC_UPD);
         } catch (Exception e) {
-            resJson.setCode(res.FAIL);
-            resJson.setMsg(res.FAIL_UPD);
+            resJson.setCode(ResponseJsonConstant.FAIL);
+            resJson.setMsg(ResponseJsonConstant.FAIL_UPD);
         }
         return resJson;
     }
@@ -73,11 +71,11 @@ public class MenuInfoServiceImpl implements MenuInfoService {
             for (DonMenuInfoEntity donMenuInfoEntity : donMenuInfoEntityList) {
                 donMenuInfoMapper.deleteByPrimaryKey(donMenuInfoEntity.getDonMenuInfoId());
             }
-            resJson.setCode(res.SUCCESS);
-            resJson.setMsg(res.SUC_DEL);
+            resJson.setCode(ResponseJsonConstant.SUCCESS);
+            resJson.setMsg(ResponseJsonConstant.SUC_DEL);
         } catch (Exception e) {
-            resJson.setCode(res.FAIL);
-            resJson.setMsg(res.FAIL_DEL);
+            resJson.setCode(ResponseJsonConstant.FAIL);
+            resJson.setMsg(ResponseJsonConstant.FAIL_DEL);
         }
         return resJson;
     }

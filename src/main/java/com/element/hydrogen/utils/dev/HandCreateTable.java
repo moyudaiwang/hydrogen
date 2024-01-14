@@ -15,16 +15,22 @@ import java.util.Date;
  * CREATE TABLE DON_USER_INFO_BAK AS SELECT * FROM DON_USER_INFO;
  * 2:生成delete表结构语句；
  * 3：生成新的建表语句；
+ * 20230307可以使用
  * @Author yanyu
  * @Date 2021/4/22 21:30
  * @Version 1.0
  */
 public class HandCreateTable {
-
+    private  static final  String EXCEL_PATH ="C:\\Users\\yanyu\\Desktop\\堂吉诃德\\4_Tool\\CreateTable\\20231224mysql建表\\TableFile.xls";  //要读取的Excel路径
+    private  static final  String SQL_PATH ="C:\\Users\\yanyu\\Desktop\\堂吉诃德\\4_Tool\\CreateTable\\20231224mysql建表\\result.sql";  //要生成的建表SQL的路径
+/*    private  static final  String EXCEL_PATH ="C:\\Users\\yanyu\\Desktop\\堂吉诃德\\4_Tool\\CreateTable\\20230320mysql建表-书箱表\\TableFile.xls";  //要读取的Excel路径
+    private  static final  String SQL_PATH ="C:\\Users\\yanyu\\Desktop\\堂吉诃德\\4_Tool\\CreateTable\\20230320mysql建表-书箱表\\result.sql";  //要生成的建表SQL的路径*/
+/*
     private  static final  String EXCEL_PATH ="C:\\Users\\yanyu\\Desktop\\唐吉坷德文档库\\4_Tool\\CreateTable\\TableFile_Mysql_旧版.xls";  //要读取的Excel路径
     private  static final  String SQL_PATH ="C:\\Users\\yanyu\\Desktop\\唐吉坷德文档库\\4_Tool\\CreateTable\\result11.sql";  //要生成的建表SQL的路径
+*/
 
-    private  static final  int LOOP_NUM =15;  //循环几个工作表（sheet）
+    private  static final  int LOOP_NUM =1;  //循环几个工作表（sheet）
 
     public static void main(String[] args) throws Exception {
         File file = new File(EXCEL_PATH);

@@ -45,6 +45,22 @@ public class RandomUtil {
         return randomStr;
    }
 
+    /**
+     * 6位数字验证码
+     * @return
+     */
+   public String randomSix() {
+       String randomStr = "";
+       int flag = new Random().nextInt(999999);
+       if (flag < 100000) {
+           flag += 100000;
+       }
+       randomStr +=flag;
+        return randomStr;
+   }
+
+
+
 
 
 }

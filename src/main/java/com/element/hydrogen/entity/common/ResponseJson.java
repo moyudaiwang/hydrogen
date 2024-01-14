@@ -19,6 +19,11 @@ public class ResponseJson<T>  implements Serializable {
     public static final int STATUS_FAILURE = 0;
 
     /**
+     * 布尔值
+     */
+    private boolean okay;
+
+    /**
      * 状态码
      */
     private String code ;
@@ -44,6 +49,18 @@ public class ResponseJson<T>  implements Serializable {
 	private Object object;
 
 
-
+    public void SUCCESS(Object object) {
+        this.okay = true;
+        this.code = "200";
+        this.status = status;
+        this.msg = "响应成功";
+        this.result = result;
+        this.object = object;
+    }
+    public void FAIL() {
+        this.okay = false;
+        this.code = "500";
+        this.msg = "响应失败";
+    }
 }
 
