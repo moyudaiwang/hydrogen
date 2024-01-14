@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.element.hydrogen.mapper.map.DonWlxfMapMapper" >
+  <resultMap id="BaseResultMap" type="com.element.hydrogen.entity.map.DonWlxfMapEntity" >
+    <id column="DON_WLXF_MAP_ID" property="donWlxfMapId" jdbcType="VARCHAR" />
+    <result column="BOOK_NAME" property="bookName" jdbcType="VARCHAR" />
+    <result column="TITLE" property="title" jdbcType="VARCHAR" />
+    <result column="HERO" property="hero" jdbcType="VARCHAR" />
+    <result column="LANDMARK" property="landmark" jdbcType="VARCHAR" />
+    <result column="TIMES" property="times" jdbcType="VARCHAR" />
+    <result column="URBAN" property="urban" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="REL_HERO" property="relHero" jdbcType="VARCHAR" />
+    <result column="REL_LANDMARK" property="relLandmark" jdbcType="VARCHAR" />
+    <result column="REL_BOOK" property="relBook" jdbcType="VARCHAR" />
+    <result column="COMPANION" property="companion" jdbcType="VARCHAR" />
+    <result column="SEARCH_TIME" property="searchTime" jdbcType="VARCHAR" />
+    <result column="TICKETS" property="tickets" jdbcType="VARCHAR" />
+    <result column="ANECDOTE" property="anecdote" jdbcType="VARCHAR" />
+    <result column="X" property="x" jdbcType="VARCHAR" />
+    <result column="Y" property="y" jdbcType="VARCHAR" />
+    <result column="Z" property="z" jdbcType="VARCHAR" />
+    <result column="MAP_STATUS" property="mapStatus" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="DATE" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DON_WLXF_MAP_ID, BOOK_NAME, TITLE, HERO, LANDMARK, TIMES, URBAN, ADDRESS, REL_HERO, 
+    REL_LANDMARK, REL_BOOK, COMPANION, SEARCH_TIME, TICKETS, ANECDOTE, X, Y, Z, MAP_STATUS, 
+    REMARK, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from don_wlxf_map
+    where DON_WLXF_MAP_ID = #{donWlxfMapId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from don_wlxf_map
+    where DON_WLXF_MAP_ID = #{donWlxfMapId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.element.hydrogen.entity.map.DonWlxfMapEntity" >
+    insert into don_wlxf_map (DON_WLXF_MAP_ID, BOOK_NAME, TITLE, 
+      HERO, LANDMARK, TIMES, 
+      URBAN, ADDRESS, REL_HERO, 
+      REL_LANDMARK, REL_BOOK, COMPANION, 
+      SEARCH_TIME, TICKETS, ANECDOTE, 
+      X, Y, Z, MAP_STATUS, 
+      REMARK, CREATE_BY, CREATE_DATE, 
+      UPDATE_BY, UPDATE_DATE)
+    values (#{donWlxfMapId,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{hero,jdbcType=VARCHAR}, #{landmark,jdbcType=VARCHAR}, #{times,jdbcType=VARCHAR}, 
+      #{urban,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{relHero,jdbcType=VARCHAR}, 
+      #{relLandmark,jdbcType=VARCHAR}, #{relBook,jdbcType=VARCHAR}, #{companion,jdbcType=VARCHAR}, 
+      #{searchTime,jdbcType=VARCHAR}, #{tickets,jdbcType=VARCHAR}, #{anecdote,jdbcType=VARCHAR}, 
+      #{x,jdbcType=VARCHAR}, #{y,jdbcType=VARCHAR}, #{z,jdbcType=VARCHAR}, #{mapStatus,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.element.hydrogen.entity.map.DonWlxfMapEntity" >
+    insert into don_wlxf_map
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="donWlxfMapId != null" >
+        DON_WLXF_MAP_ID,
+      </if>
+      <if test="bookName != null" >
+        BOOK_NAME,
+      </if>
+      <if test="title != null" >
+        TITLE,
+      </if>
+      <if test="hero != null" >
+        HERO,
+      </if>
+      <if test="landmark != null" >
+        LANDMARK,
+      </if>
+      <if test="times != null" >
+        TIMES,
+      </if>
+      <if test="urban != null" >
+        URBAN,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="relHero != null" >
+        REL_HERO,
+      </if>
+      <if test="relLandmark != null" >
+        REL_LANDMARK,
+      </if>
+      <if test="relBook != null" >
+        REL_BOOK,
+      </if>
+      <if test="companion != null" >
+        COMPANION,
+      </if>
+      <if test="searchTime != null" >
+        SEARCH_TIME,
+      </if>
+      <if test="tickets != null" >
+        TICKETS,
+      </if>
+      <if test="anecdote != null" >
+        ANECDOTE,
+      </if>
+      <if test="x != null" >
+        X,
+      </if>
+      <if test="y != null" >
+        Y,
+      </if>
+      <if test="z != null" >
+        Z,
+      </if>
+      <if test="mapStatus != null" >
+        MAP_STATUS,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="donWlxfMapId != null" >
+        #{donWlxfMapId,jdbcType=VARCHAR},
+      </if>
+      <if test="bookName != null" >
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="hero != null" >
+        #{hero,jdbcType=VARCHAR},
+      </if>
+      <if test="landmark != null" >
+        #{landmark,jdbcType=VARCHAR},
+      </if>
+      <if test="times != null" >
+        #{times,jdbcType=VARCHAR},
+      </if>
+      <if test="urban != null" >
+        #{urban,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="relHero != null" >
+        #{relHero,jdbcType=VARCHAR},
+      </if>
+      <if test="relLandmark != null" >
+        #{relLandmark,jdbcType=VARCHAR},
+      </if>
+      <if test="relBook != null" >
+        #{relBook,jdbcType=VARCHAR},
+      </if>
+      <if test="companion != null" >
+        #{companion,jdbcType=VARCHAR},
+      </if>
+      <if test="searchTime != null" >
+        #{searchTime,jdbcType=VARCHAR},
+      </if>
+      <if test="tickets != null" >
+        #{tickets,jdbcType=VARCHAR},
+      </if>
+      <if test="anecdote != null" >
+        #{anecdote,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null" >
+        #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null" >
+        #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="z != null" >
+        #{z,jdbcType=VARCHAR},
+      </if>
+      <if test="mapStatus != null" >
+        #{mapStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.element.hydrogen.entity.map.DonWlxfMapEntity" >
+    update don_wlxf_map
+    <set >
+      <if test="bookName != null" >
+        BOOK_NAME = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        TITLE = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="hero != null" >
+        HERO = #{hero,jdbcType=VARCHAR},
+      </if>
+      <if test="landmark != null" >
+        LANDMARK = #{landmark,jdbcType=VARCHAR},
+      </if>
+      <if test="times != null" >
+        TIMES = #{times,jdbcType=VARCHAR},
+      </if>
+      <if test="urban != null" >
+        URBAN = #{urban,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="relHero != null" >
+        REL_HERO = #{relHero,jdbcType=VARCHAR},
+      </if>
+      <if test="relLandmark != null" >
+        REL_LANDMARK = #{relLandmark,jdbcType=VARCHAR},
+      </if>
+      <if test="relBook != null" >
+        REL_BOOK = #{relBook,jdbcType=VARCHAR},
+      </if>
+      <if test="companion != null" >
+        COMPANION = #{companion,jdbcType=VARCHAR},
+      </if>
+      <if test="searchTime != null" >
+        SEARCH_TIME = #{searchTime,jdbcType=VARCHAR},
+      </if>
+      <if test="tickets != null" >
+        TICKETS = #{tickets,jdbcType=VARCHAR},
+      </if>
+      <if test="anecdote != null" >
+        ANECDOTE = #{anecdote,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null" >
+        X = #{x,jdbcType=VARCHAR},
+      </if>
+      <if test="y != null" >
+        Y = #{y,jdbcType=VARCHAR},
+      </if>
+      <if test="z != null" >
+        Z = #{z,jdbcType=VARCHAR},
+      </if>
+      <if test="mapStatus != null" >
+        MAP_STATUS = #{mapStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=DATE},
+      </if>
+    </set>
+    where DON_WLXF_MAP_ID = #{donWlxfMapId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.element.hydrogen.entity.map.DonWlxfMapEntity" >
+    update don_wlxf_map
+    set BOOK_NAME = #{bookName,jdbcType=VARCHAR},
+      TITLE = #{title,jdbcType=VARCHAR},
+      HERO = #{hero,jdbcType=VARCHAR},
+      LANDMARK = #{landmark,jdbcType=VARCHAR},
+      TIMES = #{times,jdbcType=VARCHAR},
+      URBAN = #{urban,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      REL_HERO = #{relHero,jdbcType=VARCHAR},
+      REL_LANDMARK = #{relLandmark,jdbcType=VARCHAR},
+      REL_BOOK = #{relBook,jdbcType=VARCHAR},
+      COMPANION = #{companion,jdbcType=VARCHAR},
+      SEARCH_TIME = #{searchTime,jdbcType=VARCHAR},
+      TICKETS = #{tickets,jdbcType=VARCHAR},
+      ANECDOTE = #{anecdote,jdbcType=VARCHAR},
+      X = #{x,jdbcType=VARCHAR},
+      Y = #{y,jdbcType=VARCHAR},
+      Z = #{z,jdbcType=VARCHAR},
+      MAP_STATUS = #{mapStatus,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=DATE},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_DATE = #{updateDate,jdbcType=DATE}
+    where DON_WLXF_MAP_ID = #{donWlxfMapId,jdbcType=VARCHAR}
+  </update>
+
+  <select id="queryMapPoints" resultMap="BaseResultMap" parameterType="com.element.hydrogen.dto.map.MapParam" >
+    select
+      BOOK_NAME, TITLE, HERO, LANDMARK, TIMES, URBAN, ADDRESS, REL_HERO,
+      REL_LANDMARK, REL_BOOK, COMPANION, SEARCH_TIME, TICKETS, ANECDOTE, X, Y, Z, MAP_STATUS,
+      REMARK
+    from don_wlxf_map
+    where MAP_STATUS = '1'
+    <if test="module != null and module != ''" >
+      and BOOK_NAME = #{module,jdbcType=VARCHAR}
+    </if>
+  </select>
+  <select id="initMapMenu" resultType="com.element.hydrogen.dto.common.MapDto">
+    select DISTINCT
+      BOOK_NAME label,
+      BOOK_NAME val
+    from don_wlxf_map
+    where MAP_STATUS = '1'
+      AND BOOK_NAME IS NOT NULL
+      AND BOOK_NAME != ''
+  </select>
+
+</mapper>

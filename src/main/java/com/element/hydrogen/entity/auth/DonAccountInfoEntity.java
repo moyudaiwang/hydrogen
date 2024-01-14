@@ -55,7 +55,21 @@ public class DonAccountInfoEntity extends PageResultEntity {
     /**
      * 登录：待验证账号
      */
-    private String account;
+    private String alien;
+
+    /**
+     * 登录：登录提示信息
+     */
+    private String msg;
+    /**
+     * 登录：登录提示信息
+     */
+    private boolean alienVerify;
+
+    /**
+     * 登录：登录提示信息
+     */
+    private int alienType;
 
 
 }

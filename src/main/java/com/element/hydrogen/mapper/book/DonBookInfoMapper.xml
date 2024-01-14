@@ -103,7 +103,7 @@
       #{bindType,jdbcType=VARCHAR}, #{lwh,jdbcType=VARCHAR}, #{volume,jdbcType=VARCHAR}, 
       #{weight,jdbcType=VARCHAR}, #{signFlag,jdbcType=VARCHAR}, #{signetFlag,jdbcType=VARCHAR}, 
       #{bookAvatar,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR},
-      now(), #{updateBy,jdbcType=VARCHAR}, now()}
+      now(), #{updateBy,jdbcType=VARCHAR}, now()
       )
   </insert>
   <insert id="insertSelective" parameterType="com.element.hydrogen.entity.book.DonBookInfoEntity" >

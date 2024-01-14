@@ -4,6 +4,9 @@ import com.element.hydrogen.entity.auth.DonAccountInfoEntity;
 
 import java.util.List;
 
+/**
+ * @author yanyu
+ */
 public interface DonAccountInfoMapper {
     int deleteByPrimaryKey(String donAccountInfoId);
 
@@ -18,4 +21,11 @@ public interface DonAccountInfoMapper {
     int updateByPrimaryKey(DonAccountInfoEntity record);
 
     List<DonAccountInfoEntity> query(DonAccountInfoEntity donAccountInfoEntity);
+
+    /***
+     * 校验用户ID、用户名，手机号，邮箱是否存在
+     * @param param
+     * @return
+     */
+    int check(DonAccountInfoEntity param);
 }

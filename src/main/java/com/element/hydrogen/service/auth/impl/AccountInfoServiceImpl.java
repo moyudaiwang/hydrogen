@@ -25,15 +25,13 @@ public class AccountInfoServiceImpl implements AccountInfoService {
     @Autowired
     public DonAccountInfoMapper donAccountInfoMapper;
 
-    public static ResponseJsonConstant res;
-
     @Override
     public ResponseJson query(DonAccountInfoEntity donAccountInfoEntity) {
         ResponseJson resJson = new ResponseJson();
         PageHelper.startPage(donAccountInfoEntity.getPageNum(), donAccountInfoEntity.getPageSize());
         List<DonAccountInfoEntity> donAccountInfoEntityList = donAccountInfoMapper.query(donAccountInfoEntity);
         PageInfo<DonAccountInfoEntity> pageInfo = new PageInfo<DonAccountInfoEntity>(donAccountInfoEntityList);
-        resJson.setCode(res.SUCCESS);
+        resJson.setCode(ResponseJsonConstant.SUCCESS);
         resJson.setObject(pageInfo);
         return resJson;
     }
@@ -43,11 +41,11 @@ public class AccountInfoServiceImpl implements AccountInfoService {
         ResponseJson resJson = new ResponseJson();
         try {
             donAccountInfoMapper.insert(donAccountInfoEntity);
-            resJson.setCode(res.SUCCESS);
-            resJson.setMsg(res.SUC_ADD);
+            resJson.setCode(ResponseJsonConstant.SUCCESS);
+            resJson.setMsg(ResponseJsonConstant.SUC_ADD);
         } catch (Exception e) {
-            resJson.setCode(res.FAIL);
-            resJson.setMsg(res.FAIL_ADD);
+            resJson.setCode(ResponseJsonConstant.FAIL);
+            resJson.setMsg(ResponseJsonConstant.FAIL_ADD);
         }
         return resJson;
     }
@@ -57,11 +55,11 @@ public class AccountInfoServiceImpl implements AccountInfoService {
         ResponseJson resJson = new ResponseJson();
         try {
             donAccountInfoMapper.updateByPrimaryKey(donAccountInfoEntity);
-            resJson.setCode(res.SUCCESS);
-            resJson.setMsg(res.SUC_UPD);
+            resJson.setCode(ResponseJsonConstant.SUCCESS);
+            resJson.setMsg(ResponseJsonConstant.SUC_UPD);
         } catch (Exception e) {
-            resJson.setCode(res.FAIL);
-            resJson.setMsg(res.FAIL_UPD);
+            resJson.setCode(ResponseJsonConstant.FAIL);
+            resJson.setMsg(ResponseJsonConstant.FAIL_UPD);
         }
         return resJson;
     }
@@ -73,11 +71,11 @@ public class AccountInfoServiceImpl implements AccountInfoService {
             for (DonAccountInfoEntity donAccountInfoEntity : donAccountInfoEntityList) {
                 donAccountInfoMapper.deleteByPrimaryKey(donAccountInfoEntity.getDonAccountInfoId());
             }
-            resJson.setCode(res.SUCCESS);
-            resJson.setMsg(res.SUC_DEL);
+            resJson.setCode(ResponseJsonConstant.SUCCESS);
+            resJson.setMsg(ResponseJsonConstant.SUC_DEL);
         } catch (Exception e) {
-            resJson.setCode(res.FAIL);
-            resJson.setMsg(res.FAIL_DEL);
+            resJson.setCode(ResponseJsonConstant.FAIL);
+            resJson.setMsg(ResponseJsonConstant.FAIL_DEL);
         }
         return resJson;
     }

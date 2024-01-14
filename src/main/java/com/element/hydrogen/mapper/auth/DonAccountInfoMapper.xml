@@ -45,13 +45,13 @@
     INIT_PWD, ACCOUNT_STATUS, REMARK,
     CREATE_BY, CREATE_DATE, UPDATE_BY,
     UPDATE_DATE)
-    values (#{donAccountInfoId,jdbcType=VARCHAR}, #{accountId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR},
+    values (REPLACE(UUID(),"-",""), REPLACE(UUID(),"-",""), #{userId,jdbcType=VARCHAR},
     #{userName,jdbcType=VARCHAR}, #{phoneNo,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
     #{alg,jdbcType=VARCHAR}, #{userKey,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR},
     #{captcha,jdbcType=VARCHAR}, #{captchaTime,jdbcType=DATE}, #{errorNum,jdbcType=VARCHAR},
-    #{initPwd,jdbcType=VARCHAR}, #{accountStatus,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
-    #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, #{updateBy,jdbcType=VARCHAR},
-    #{updateDate,jdbcType=DATE})
+    #{initPwd,jdbcType=VARCHAR}, 'Y', #{remark,jdbcType=VARCHAR},
+    'molecule', now(), 'molecule',
+    now())
   </insert>
   <insert id="insertSelective" parameterType="com.element.hydrogen.entity.auth.DonAccountInfoEntity" >
     insert into don_account_info
@@ -258,7 +258,7 @@
   <!--登录-查询验证-->
   <select id="query" parameterType="com.element.hydrogen.entity.auth.DonAccountInfoEntity" resultMap="BaseResultMap" >
     select
-    <include refid="Base_Column_List" />
+      USER_ID, USER_NAME, PHONE_NO, EMAIL, PWD, ACCOUNT_STATUS
     from don_account_info a
     where 1=1
     <if test="userId != null" >
@@ -269,6 +269,22 @@
     </if>
     <if test="email != null" >
       AND EMAIL = #{email,jdbcType=VARCHAR}
+    </if>
+  </select>
+
+  <!--校验用户ID、用户名，手机号，邮箱是否存在-->
+  <select id="check" parameterType="com.element.hydrogen.entity.auth.DonAccountInfoEntity" resultType="java.lang.Integer" >
+    select count(0)
+    from don_account_info a
+    where 1=2
+    <if test="userId != null and userId != ''" >
+      or USER_ID = #{userId,jdbcType=VARCHAR}
+    </if>
+    <if test="phoneNo != null and phoneNo != ''" >
+      or PHONE_NO = #{phoneNo,jdbcType=VARCHAR}
+    </if>
+    <if test="email != null and email != ''" >
+      or EMAIL = #{email,jdbcType=VARCHAR}
     </if>
   </select>
 </mapper>
